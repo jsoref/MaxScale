@@ -1,0 +1,6 @@
+github
+https
+maxscale
+ssh
+ubuntu
+workarounds
