@@ -688,7 +688,7 @@ bool extract_database(GWBUF* buf, char* str)
 
         if (tok == NULL || strcasecmp(tok, "use") != 0)
         {
-            MXB_ERROR("extract_database: Malformed chage database packet.");
+            MXB_ERROR("extract_database: Malformed change database packet.");
             succp = false;
             goto retblock;
         }
