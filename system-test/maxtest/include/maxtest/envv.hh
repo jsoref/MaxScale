@@ -8,7 +8,7 @@
  *
  * @param name Name of the variable
  * @param format Default value format string
- * @return Enviromental variable value
+ * @return Environment variable value
  */
 std::string readenv(const char* name, const char* format, ...) __attribute__ ((format (printf, 2, 3)));
 
@@ -19,7 +19,7 @@ __attribute__ ((format (printf, 2, 3)));;
  * @brief readenv_int Read integer value of enviromental variable, if empty - set default
  * @param name Name of the variable
  * @param def Default value
- * @return Enviromental variable value converted to int
+ * @return Environment variable value converted to int
  */
 int readenv_int(const char * name, int def);
 
@@ -28,6 +28,6 @@ int readenv_int(const char * name, int def);
  * Values 'yes', 'y', 'true' (case independedant) are interpreted as TRUE, everything else - as FALSE
  * @param name Name of the variable
  * @param def Default value
- * @return Enviromental variable value converted to bool
+ * @return Environment variable value converted to bool
  */
 bool readenv_bool(const char * name, bool def);
