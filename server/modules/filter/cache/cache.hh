@@ -102,7 +102,7 @@ public:
     const CacheRules* should_store(const char* zDefaultDb, const GWBUF* pQuery);
 
     /**
-     * Specifies whether a particular SessioCache should refresh the data.
+     * Specifies whether a particular SessionCache should refresh the data.
      *
      * @param key       The hashed key for a query.
      * @param pSession  The session cache asking.
