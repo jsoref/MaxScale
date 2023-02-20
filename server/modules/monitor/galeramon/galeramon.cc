@@ -593,13 +593,13 @@ MonitorServer* GaleraMonitor::get_candidate_master()
     long min_id = -1;
     int minval = INT_MAX;
 
-    /* set min_id to the lowest value of moitor_servers->server->node_id */
-    for (auto moitor_servers : servers())
+    /* set min_id to the lowest value of monitor_servers->server->node_id */
+    for (auto monitor_servers : servers())
     {
-        if (!moitor_servers->server->is_in_maint()
-            && (moitor_servers->pending_status & SERVER_JOINED))
+        if (!monitor_servers->server->is_in_maint()
+            && (monitor_servers->pending_status & SERVER_JOINED))
         {
-            int64_t priority = moitor_servers->server->priority();
+            int64_t priority = monitor_servers->server->priority();
 
             if (m_config.use_priority && priority != 0)
             {
@@ -607,10 +607,10 @@ MonitorServer* GaleraMonitor::get_candidate_master()
                 if (priority > 0 && priority < minval)
                 {
                     minval = priority;
-                    candidate_master = moitor_servers;
+                    candidate_master = monitor_servers;
                 }
             }
-            else if (moitor_servers->node_id >= 0)
+            else if (monitor_servers->node_id >= 0)
             {
                 if (m_config.use_priority && candidate_master
                     && candidate_master->server->priority() > 0)
@@ -620,10 +620,10 @@ MonitorServer* GaleraMonitor::get_candidate_master()
                 }
 
                 // Server priorities are not in use or no candidate has been found
-                if (min_id < 0 || moitor_servers->node_id < min_id)
+                if (min_id < 0 || monitor_servers->node_id < min_id)
                 {
-                    min_id = moitor_servers->node_id;
-                    candidate_master = moitor_servers;
+                    min_id = monitor_servers->node_id;
+                    candidate_master = monitor_servers;
                 }
             }
         }
