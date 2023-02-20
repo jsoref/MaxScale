@@ -216,7 +216,7 @@ void test_multiple_sql_packets1()
         int headlen = head ? gwbuf_length(head) : 0;
         int completelen = complete ? gwbuf_length(complete) : 0;
         mxb_assert_message(headlen + completelen == sizeof(resultset),
-                           "Both buffers should sum up to sizeof(resutlset) bytes");
+                           "Both buffers should sum up to sizeof(resultset) bytes");
         uint8_t databuf[sizeof(resultset)];
         gwbuf_copy_data(complete, 0, completelen, databuf);
         if (head)
@@ -241,12 +241,12 @@ void test_multiple_sql_packets1()
     }
     while (total < sizeof(resultset));
 
-    mxb_assert_message(gwbuf_length(head) == sizeof(resultset), "Head should be sizeof(resulset) bytes long");
+    mxb_assert_message(gwbuf_length(head) == sizeof(resultset), "Head should be sizeof(resultset) bytes long");
     complete = modutil_get_complete_packets(&head);
     mxb_assert_message(head == NULL, "Head should be NULL");
     mxb_assert_message(complete, "Complete should not be NULL");
     mxb_assert_message(gwbuf_length(complete) == sizeof(resultset),
-                       "Complete should be sizeof(resulset) bytes long");
+                       "Complete should be sizeof(resultset) bytes long");
 
     unsigned int headlen = head ? gwbuf_length(head) : 0;
     unsigned int completelen = complete ? gwbuf_length(complete) : 0;
@@ -413,7 +413,7 @@ void test_multiple_sql_packets2()
         int headlen = gwbuf_length(head);
         int nextlen = next ? gwbuf_length(next) : 0;
         mxb_assert_message(headlen + nextlen == sizeof(resultset),
-                           "Both buffers should sum up to sizeof(resutlset) bytes");
+                           "Both buffers should sum up to sizeof(resultset) bytes");
         uint8_t databuf[sizeof(resultset)];
         gwbuf_copy_data(next, 0, nextlen, databuf);
         gwbuf_copy_data(head, 0, headlen, databuf + nextlen);
