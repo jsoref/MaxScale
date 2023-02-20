@@ -26,7 +26,7 @@ namespace maxbase
 
 /**
  * @brief set_thread_name - Set the name of a thread.
- *                          Usefull e.g. with "top -H -p $(pidof maxscale)"
+ *                          Useful e.g. with "top -H -p $(pidof maxscale)"
  * @param thread
  * @param name            - Note: only the first 15 chars can be used
  */
