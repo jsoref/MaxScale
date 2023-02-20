@@ -193,7 +193,7 @@ bool RoutingWorker::init(mxb::WatchdogNotifier* pNotifier)
                 {
                     int id = pWorker->id();
 
-                    // We require the routing worker ids to be consequtive.
+                    // We require the routing worker ids to be consecutive.
                     mxb_assert(id_prev == -1 || (id_prev + 1 == id));
                     MXB_AT_DEBUG(id_prev = id);
 
