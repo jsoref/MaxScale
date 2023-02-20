@@ -442,7 +442,7 @@ Note that if MaxScale is running in a container where the CPU resources
 have been limited, the use of `auto` may cause MaxScale to use more resources
 than what is available. In such a situation `auto` should not be used, but instead
 an explicit number that corresponds to the amount of CPU resources available in
-the container. As a rule of thumb, an approiate value for `threads` is the
+the container. As a rule of thumb, an appropriate value for `threads` is the
 _vCPU_ of the container rounded up to the nearest integer. For instance, if
 the _vCPU_ of the container is `0.5` then `1` is an appropriate value for
 `threads`, if the _vCPU_ is `2.3` then `3` is.
