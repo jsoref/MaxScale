@@ -532,7 +532,7 @@ void qc_set_server_version(uint64_t version);
 uint64_t qc_get_server_version();
 
 /**
- * String represenation for the parse result.
+ * String representation for the parse result.
  *
  * @param result A parsing result.
  *
@@ -541,7 +541,7 @@ uint64_t qc_get_server_version();
 const char* qc_result_to_string(qc_parse_result_t result);
 
 /**
- * String represenation for the kill type.
+ * String representation for the kill type.
  *
  * @param type A kill type.
  *
