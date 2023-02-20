@@ -204,7 +204,7 @@ enum qc_kill_type_t
 struct QC_KILL
 {
     std::string    target;                      // The string form target of the KILL
-    bool           user = false;                // If true, the the value in `target` is the name of a user.
+    bool           user = false;                // If true, the value in `target` is the name of a user.
     bool           soft = false;                // If true, the SOFT option was used
     qc_kill_type_t type = QC_KILL_CONNECTION;   // Type of the KILL command
 };

@@ -2066,7 +2066,7 @@ public:
     Configuration(const std::string& name, const Specification* pSpecification);
 
     /**
-     * @return The The object (i.e. section name) of this configuration.
+     * @return The object (i.e. section name) of this configuration.
      */
     const std::string& name() const;
 
