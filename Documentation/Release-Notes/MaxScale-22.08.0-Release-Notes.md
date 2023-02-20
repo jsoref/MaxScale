@@ -149,7 +149,7 @@ information, please see [max_data_age](../Routers/Avrorouter.md#max_data_age).
 
 ### [MXS-4041](https://jira.mariadb.org/browse/MXS-4041) REST API TSL Certificate Reloading
 
-Note possible to reload the TLS certificats of the REST-API using _maxctrl_.
+Note possible to reload the TLS certificates of the REST-API using _maxctrl_.
 
 ### [MXS-4052](https://jira.mariadb.org/browse/MXS-4052) Kafka Schema object
 
