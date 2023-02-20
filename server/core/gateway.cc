@@ -2296,7 +2296,7 @@ int main(int argc, char** argv)
         }
 
         // Finalize the internal query classifier. The actual plugin was finalized
-        // via the module finalizarion above.
+        // via the module finalization above.
         qc_process_end(QC_INIT_SELF);
     }
     else
