@@ -15,7 +15,7 @@
 #include "rwsplitsession.hh"
 
 /**
- * @bref discard the result of MASTER_GTID_WAIT statement
+ * @brief discard the result of MASTER_GTID_WAIT statement
  *
  * The result will be an error or an OK packet.
  *
@@ -60,7 +60,7 @@ GWBUF* RWSplitSession::discard_master_wait_gtid_result(GWBUF* buffer)
 }
 
 /**
- * @bref After discarded the wait result, we need correct the seqence number of every packet
+ * @brief After discarded the wait result, we need correct the seqence number of every packet
  *
  * @param buffer origin reply buffer
  *
