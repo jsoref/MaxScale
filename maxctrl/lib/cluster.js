@@ -28,7 +28,7 @@ function sameResource(oldVal, newVal) {
   return oldVal.id == newVal.id;
 }
 
-// Return objets that are in <a> but not in <b>
+// Return objects that are in <a> but not in <b>
 function getDifference(a, b) {
   return a && b ? _.differenceWith(a.data, b.data, sameResource) : [];
 }
