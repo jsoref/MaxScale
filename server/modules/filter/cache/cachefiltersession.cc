@@ -546,7 +546,7 @@ bool CacheFilterSession::clientReply(GWBUF* pData, const mxs::ReplyRoute& down, 
     if (m_invalidate_now)
     {
         // The response to either a COMMIT, or to UPDATE/DELETE/INSERT with
-        // autcommit being true.
+        // autocommit being true.
 
         if (reply.is_complete())
         {
