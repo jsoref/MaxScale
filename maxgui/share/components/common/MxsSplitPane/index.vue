@@ -101,7 +101,7 @@ export default {
             }
         },
         value(v) {
-            // update current pecent when value change. e.g when pane is toggled
+            // update current percent when value change. e.g when pane is toggled
             if (v !== this.currPct) this.currPct = v
         },
     },
