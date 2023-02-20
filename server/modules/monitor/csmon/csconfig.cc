@@ -84,7 +84,7 @@ config::ParamString admin_base_path(
 config::ParamString api_key(
     &specification,
     "api_key",
-    "The API key to be used in the communication with the Columnstora admin daemon.",
+    "The API key to be used in the communication with the Columnstore admin daemon.",
     DEFAULT_API_KEY);
 
 config::ParamString local_address(
