@@ -553,7 +553,7 @@ bool ensure_query_is_parsed(GWBUF* query)
     if (!parsed)
     {
         // Instead of modifying global_system_variables, from which
-        // thd->variables.sql_mode will be initialied, we should modify
+        // thd->variables.sql_mode will be initialized, we should modify
         // thd->variables.sql_mode _after_ it has been created and
         // initialized.
         //
