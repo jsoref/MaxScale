@@ -129,7 +129,7 @@ separate user credentials database. By default, that database contains the user
 
 Note that if MaxCtrl is invoked without explicitly providing a user and password
 then it will by default use `admin` and `mariadb`. That means that when the
-default user is removed, the credentials must always be provded.
+default user is removed, the credentials must always be provided.
 
 ## Static Configuration Parameters
 
