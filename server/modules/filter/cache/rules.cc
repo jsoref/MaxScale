@@ -1188,7 +1188,7 @@ static bool cache_rule_matches_column_regexp(CACHE_RULE* self,
     if (databases.empty())
     {
         // If no databases have been mentioned, then we can assume that all
-        // tables and columns that are not explcitly qualified refer to the
+        // tables and columns that are not explicitly qualified refer to the
         // default database.
         if (default_db)
         {
@@ -1308,7 +1308,7 @@ static bool cache_rule_matches_column_simple(CACHE_RULE* self, const char* defau
     if (databases.empty())
     {
         // If no databases have been mentioned, then we can assume that all
-        // tables and columns that are not explcitly qualified refer to the
+        // tables and columns that are not explicitly qualified refer to the
         // default database.
         if (default_db)
         {
