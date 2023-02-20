@@ -24,7 +24,7 @@ int test_longblob(TestConnections* Test,
 
     for (int k = 0; k < rows; k++)
     {
-        Test->tprintf("Preparintg INSERT stmt\n");
+        Test->tprintf("Preparing INSERT stmt\n");
         MYSQL_STMT* stmt = mysql_stmt_init(conn);
         if (stmt == NULL)
         {
