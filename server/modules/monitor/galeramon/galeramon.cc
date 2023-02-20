@@ -703,7 +703,7 @@ static MonitorServer* set_cluster_master(MonitorServer* current_master,
  *
  * All slave nodes have a sorted list of nodes tht can be used as donor nodes.
  *
- * If there is only one node the funcion returns,
+ * If there is only one node the function returns,
  *
  * @param   mon        The monitor handler
  * @param   is_cluster The number of joined nodes
