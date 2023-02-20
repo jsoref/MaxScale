@@ -1617,7 +1617,7 @@ bool DCB::disable_events()
 }
 
 /**
- * @brief DCB callback for upstream throtting
+ * @brief DCB callback for upstream throttling
  * Called by any backend dcb when its writeq is above high water mark or
  * it has reached high water mark and now it is below low water mark,
  * Calling `poll_remove_dcb` or `poll_add_dcb' on client dcb to throttle
@@ -1704,7 +1704,7 @@ bool backend_dcb_add_func(DCB* dcb, void* data)
 }
 
 /**
- * @brief DCB callback for downstream throtting
+ * @brief DCB callback for downstream throttling
  * Called by client dcb when its writeq is above high water mark or
  * it has reached high water mark and now it is below low water mark,
  * Calling `poll_remove_dcb` or `poll_add_dcb' on all backend dcbs to
