@@ -14,7 +14,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
 ## New Features
 
-* [MXS-4242](https://jira.mariadb.org/browse/MXS-4242) At startup nosqlprotcol should optionally create a default NoSQL user.
+* [MXS-4242](https://jira.mariadb.org/browse/MXS-4242) At startup nosqlprotocol should optionally create a default NoSQL user.
 
 ## Bug fixes
 
