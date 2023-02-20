@@ -588,7 +588,7 @@ GWBUF* gwbuf_consume(GWBUF* head, uint64_t length);
 
 /**
  * Trim bytes from the end of a GWBUF structure that may be the first
- * in a list. If the buffer has n_bytes or less then it will be freed and
+ * in a list. If the buffer has n_bytes or less than it will be freed and
  * the next buffer in the list will be returned, or if none, NULL.
  *
  * @param head     The buffer to trim
