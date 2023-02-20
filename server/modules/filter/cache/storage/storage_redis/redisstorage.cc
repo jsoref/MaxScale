@@ -630,7 +630,7 @@ public:
                         break;
 
                     default:
-                        MXB_WARNING("Unexpected redis redis return type (%s) received.",
+                        MXB_WARNING("Unexpected redis return type (%s) received.",
                                     redis_type_to_string(reply.type()));
                 }
             }
