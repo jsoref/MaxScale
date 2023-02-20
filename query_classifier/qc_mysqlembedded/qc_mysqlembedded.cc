@@ -915,7 +915,7 @@ return_here:
  * set_var_role, etc. that all are derived from set_var_base. However, there
  * is no type-information available in set_var_base, which is the type of the
  * instances when accessed from the lexer. Consequently, we cannot know what
- * kind of statment it is based on that, only whether it is a system variable
+ * kind of statement it is based on that, only whether it is a system variable
  * or not.
  *
  * Consequently, we just look at the string and deduce whether it is a
@@ -2487,7 +2487,7 @@ int32_t qc_mysql_get_preparable_stmt(GWBUF* stmt, GWBUF** preparable_stmt)
                         // Is followed by the statement.
                         char* s = (char*)GWBUF_DATA(preperable_packet) + 5;
 
-                        // We copy the statment, blindly replacing all '?':s (always)
+                        // We copy the statement, blindly replacing all '?':s (always)
                         // and ':N' (in Oracle mode) with '0':s as otherwise the parsing of the
                         // preparable statement as a regular statement will not always succeed.
                         qc_sql_mode_t sql_mode = this_thread.sql_mode;

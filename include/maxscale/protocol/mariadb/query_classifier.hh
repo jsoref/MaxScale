@@ -325,7 +325,7 @@ qc_query_op_t qc_get_operation(GWBUF* stmt);
 std::string_view qc_get_prepare_name(GWBUF* stmt);
 
 /**
- * Returns the preparable statement of a PREPARE statment. Other query classifier
+ * Returns the preparable statement of a PREPARE statement. Other query classifier
  * functions can then be used on the returned statement to find out information
  * about the preparable statement. The returned @c GWBUF should not be used for
  * anything else but for obtaining information about the preparable statement.
