@@ -854,7 +854,7 @@ static void log_startup_message(int eno, const char* message)
  * Log startup error.
  *
  * - If possible, log message as an error to the log.
- * - Always print the message to stdeerr.
+ * - Always print the message to stderr.
  *
  * @param eno     Errno value, ignored if 0.
  * @param format  Printf format string.
@@ -871,7 +871,7 @@ static void log_startup_error(int eno, const char* format, ...)
  * Log startup error.
  *
  * - If possible, log message as an error to the log.
- * - Always print the message to stdeerr.
+ * - Always print the message to stderr.
  *
  * @param format  Printf format string.
  * @param ...     Arguments according to @c format.
