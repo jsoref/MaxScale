@@ -1222,7 +1222,7 @@ private:
 
         // Does this work? Probably not in all cases; it appears that WATCH
         // needs to be used to prevent problems caused by the fetching of the keys
-        // and the deleteing of the keys (and values) being done in separate
+        // and the deleting of the keys (and values) being done in separate
         // transactions.
 
         return action;
