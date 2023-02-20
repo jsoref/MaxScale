@@ -856,7 +856,7 @@ public:
      * @brief Starts the monitor.
      *
      * - Calls @c has_sufficient_permissions(), if it has not been done earlier.
-     * - Updates the 'script' and 'events' configuration paramameters.
+     * - Updates the 'script' and 'events' configuration parameters.
      * - Starts the monitor thread.
      *
      * - Once the monitor thread starts, it will
