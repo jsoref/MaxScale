@@ -484,7 +484,7 @@ bool CsMonitorServer::commit(const std::vector<CsMonitorServer*>& servers,
     return rv;
 }
 
-//statis
+//static
 Results CsMonitorServer::commit(const std::vector<CsMonitorServer*>& servers,
                                 const std::chrono::seconds& timeout,
                                 CsContext& context)
