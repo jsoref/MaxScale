@@ -147,7 +147,7 @@ Now possible to reload the TLS certificates of servers and listeners using _maxc
 The avro router is now capable of purging old log files. For more
 information, please see [max_data_age](../Routers/Avrorouter.md#max_data_age).
 
-### [MXS-4041](https://jira.mariadb.org/browse/MXS-4041) REST API TSL Certificate Reloading
+### [MXS-4041](https://jira.mariadb.org/browse/MXS-4041) REST API TLS Certificate Reloading
 
 Note possible to reload the TLS certificates of the REST-API using _maxctrl_.
 
