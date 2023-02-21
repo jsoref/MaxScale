@@ -112,7 +112,7 @@ static MYSQL* open_conn(int port, std::string ip, std::string user, std::string 
 }
 
 /**
- * Opens connection to with default flags without defning DB name (just conecto server)
+ * Opens connection to with default flags without defining DB name (just connect to server)
  *
  * @param port  DB server port
  * @param ip    DB server IP address
@@ -160,10 +160,10 @@ int execute_query_from_file(MYSQL* conn, FILE* file);
 int execute_query_silent(MYSQL* conn, const char* sql, bool silent = true);
 
 /**
- * @brief Executes SQL query and store 'affected rows' number in affectet_rows parameter
+ * @brief Executes SQL query and store 'affected rows' number in affected_rows parameter
  * @param conn MYSQL    connection struct
  * @param sql   SQL string
- * @param affected_rows pointer to variabe to store number of affected rows
+ * @param affected_rows pointer to variable to store number of affected rows
  * @return 0 in case of success
  */
 int execute_query_affected_rows(MYSQL* conn, const char* sql, my_ulonglong* affected_rows);
@@ -179,7 +179,7 @@ int execute_query_count_rows(MYSQL* conn, const char* sql);
 
 /**
  * @brief Executes SQL query and get number of rows in the result
- * This function does not check boudaries of 'num_of_rows' array. This
+ * This function does not check boundaries of 'num_of_rows' array. This
  * array have to be big enough to store all results
  * @param conn MYSQL    connection struct
  * @param sql   SQL string
@@ -193,10 +193,10 @@ int execute_query_num_of_rows(MYSQL* conn,
                               unsigned long long* i);
 
 /**
- * @brief Executes perared statement and get number of rows in the result
- * This function does not check boudaries of 'num_of_rows' array. This
+ * @brief Executes prepared statement and get number of rows in the result
+ * This function does not check boundaries of 'num_of_rows' array. This
  * array have to be big enough to store all results
- * @param stmt MYSQL_STMT statetement struct (from mysql_stmt_init())
+ * @param stmt MYSQL_STMT statement struct (from mysql_stmt_init())
  * @param num_of_rows pointer to array to store number of result rows
  * @param i pointer to variable to store number of result sets
  * @return 0 in case of success

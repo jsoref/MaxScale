@@ -37,7 +37,7 @@ to more robust behavior and less warnings/errors logged.
 
 The maximum number of routing threads has been increased to 256 (was 100).
 
-### [MXS-3619](https://jira.mariadb.org/browse/MXS-3619) Synchronizion of server states
+### [MXS-3619](https://jira.mariadb.org/browse/MXS-3619) Synchronization of server states
 
 When configuration synchronization is enabled, if the `Maintenance`
 or `Drain` state of a server is changed, it will affect all MaxScale
@@ -147,9 +147,9 @@ Now possible to reload the TLS certificates of servers and listeners using _maxc
 The avro router is now capable of purging old log files. For more
 information, please see [max_data_age](../Routers/Avrorouter.md#max_data_age).
 
-### [MXS-4041](https://jira.mariadb.org/browse/MXS-4041) REST API TSL Certificate Reloading
+### [MXS-4041](https://jira.mariadb.org/browse/MXS-4041) REST API TLS Certificate Reloading
 
-Note possible to reload the TLS certificats of the REST-API using _maxctrl_.
+Note possible to reload the TLS certificates of the REST-API using _maxctrl_.
 
 ### [MXS-4052](https://jira.mariadb.org/browse/MXS-4052) Kafka Schema object
 

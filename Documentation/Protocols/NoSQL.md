@@ -242,7 +242,7 @@ nosqlprotocol.password=thepassword
 ```
 then each MongoDB® client will use those credentials when accessing the
 MariaDB server. Note that from the perspective of the MariaDB server, it
-is not possibe to distinguish between different MongoDB® clients.
+is not possible to distinguish between different MongoDB® clients.
 
 ### Unique Credentials
 
@@ -672,7 +672,7 @@ which means that only the `test` database can be accessed and modified.
 
 Since `nosqlprotocol` is a regular protocol module used in a listener,
 the TLS/SSL support of listeners is available. Please see
-[TSLSSL encryption](Getting-Started/Configuration-Guide.md#tsl-encryption)
+[TLSSSL encryption](Getting-Started/Configuration-Guide.md#tls-encryption)
 for details.
 
 ## NoSQL Account Database
@@ -1587,7 +1587,7 @@ customData | document | Optional. Any arbitrary information.
 roles | array | Optional. The roles granted to the user. Note that the existing ones are _replaced_ and not amended with these roles.
 mechanisms | array | Optional. The specific SCRAM mechanisms for user credentials. Note that if a new `pwd` is provided, then the array can contain all supported SCRAM mechanisms. If a new `pwd` is not provided, then the array must be a subset of the existing mechanisms of the user.
 
-Changes to `customData` or `mechanisism` are made only to the local
+Changes to `customData` or `mechanisms` are made only to the local
 nosqlprotocol database, but changes to `pwd` or `roles` require
 the MariaDB server to be updated.
 
@@ -1721,7 +1721,7 @@ dropIndexes | any | Ignored.
 
 **NOTE** Currently it is not possible to create indexes and thus there
 will never be any indexes that could be dropped. However, provided the
-specfied collection exists, dropping indexes will always succeed except
+specified collection exists, dropping indexes will always succeed except
 for an attempt to drop the built-in `_id_` index.
 
 ### fsync
@@ -2450,7 +2450,7 @@ MariaDB [(none)]> select * from test.collection;
 +------+------------------------------------+
 ```
 The collection `collection` is represented by a table `collection` with
-the two colums `id` and `doc`. `id` is a virtual column whose content is
+the two columns `id` and `doc`. `id` is a virtual column whose content is
 the value of the `_id` field of the document in the `doc` column.
 
 All MongoDB® commands that _mongdbprotocol_ support (but for the ones that
@@ -2487,7 +2487,7 @@ quite convenient in case the MongoDB® command does not behave as expected.
 
 ## MongoDB® Node.JS Driver
 
-As all client libraries implement and depend on the the MongoDB® wire protocol,
+As all client libraries implement and depend on the MongoDB® wire protocol,
 all client libraries should work with _nosqlprotocol_. However, the
 only client library that has been used and that has been verified to work
 is version 3.6 of the _MongoDB Node.JS Driver_.

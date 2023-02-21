@@ -252,7 +252,7 @@ void GaleraMonitor::update_server_status(MonitorServer* monitored_server)
 
     std::string server_string = monitored_server->server->info().version_string();
 
-    /* Check if the the Galera FSM shows this node is joined to the cluster */
+    /* Check if the Galera FSM shows this node is joined to the cluster */
     const char* where =
         " WHERE Variable_name IN"
         " ('wsrep_cluster_state_uuid',"
@@ -593,13 +593,13 @@ MonitorServer* GaleraMonitor::get_candidate_master()
     long min_id = -1;
     int minval = INT_MAX;
 
-    /* set min_id to the lowest value of moitor_servers->server->node_id */
-    for (auto moitor_servers : servers())
+    /* set min_id to the lowest value of monitor_servers->server->node_id */
+    for (auto monitor_servers : servers())
     {
-        if (!moitor_servers->server->is_in_maint()
-            && (moitor_servers->pending_status & SERVER_JOINED))
+        if (!monitor_servers->server->is_in_maint()
+            && (monitor_servers->pending_status & SERVER_JOINED))
         {
-            int64_t priority = moitor_servers->server->priority();
+            int64_t priority = monitor_servers->server->priority();
 
             if (m_config.use_priority && priority != 0)
             {
@@ -607,10 +607,10 @@ MonitorServer* GaleraMonitor::get_candidate_master()
                 if (priority > 0 && priority < minval)
                 {
                     minval = priority;
-                    candidate_master = moitor_servers;
+                    candidate_master = monitor_servers;
                 }
             }
-            else if (moitor_servers->node_id >= 0)
+            else if (monitor_servers->node_id >= 0)
             {
                 if (m_config.use_priority && candidate_master
                     && candidate_master->server->priority() > 0)
@@ -620,10 +620,10 @@ MonitorServer* GaleraMonitor::get_candidate_master()
                 }
 
                 // Server priorities are not in use or no candidate has been found
-                if (min_id < 0 || moitor_servers->node_id < min_id)
+                if (min_id < 0 || monitor_servers->node_id < min_id)
                 {
-                    min_id = moitor_servers->node_id;
-                    candidate_master = moitor_servers;
+                    min_id = monitor_servers->node_id;
+                    candidate_master = monitor_servers;
                 }
             }
         }
@@ -701,9 +701,9 @@ static MonitorServer* set_cluster_master(MonitorServer* current_master,
  * The list is then added to SET GLOBAL VARIABLE wrep_sst_donor =
  * The variable must be sent to all slave nodes.
  *
- * All slave nodes have a sorted list of nodes tht can be used as donor nodes.
+ * All slave nodes have a sorted list of nodes that can be used as donor nodes.
  *
- * If there is only one node the funcion returns,
+ * If there is only one node the function returns,
  *
  * @param   mon        The monitor handler
  * @param   is_cluster The number of joined nodes
@@ -827,7 +827,7 @@ void GaleraMonitor::update_sst_donor_nodes(int is_cluster)
  *
  * @param   a        Pointer to array value
  * @param   b        Pointer to array value
- * @return  A number less than, threater than or equal to 0
+ * @return  A number less than, greater than or equal to 0
  */
 
 static int compare_node_index(const void* a, const void* b)
@@ -855,7 +855,7 @@ static int compare_node_index(const void* a, const void* b)
  *
  * @param   a        Pointer to array value
  * @param   b        Pointer to array value
- * @return  A number less than, threater than or equal to 0
+ * @return  A number less than, greater than or equal to 0
  */
 
 static int compare_node_priority(const void* a, const void* b)

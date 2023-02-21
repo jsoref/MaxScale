@@ -1065,7 +1065,7 @@ static int read_log(const char* name, char** err_log_content_p)
         }
         else
         {
-            printf("Error allocationg memory for the log\n");
+            printf("Error allocating memory for the log\n");
             return 1;
         }
     }
@@ -1113,7 +1113,7 @@ int TestConnections::check_maxscale_alive()
     int gr = global_result;
     tprintf("Connecting to Maxscale\n");
     add_result(maxscale->connect_maxscale(), "Can not connect to Maxscale\n");
-    tprintf("Trying simple query against all sevices\n");
+    tprintf("Trying simple query against all services\n");
     tprintf("RWSplit \n");
     try_query(maxscale->conn_rwsplit, "show databases;");
     tprintf("ReadConn Master \n");

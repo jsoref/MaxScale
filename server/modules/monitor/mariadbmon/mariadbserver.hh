@@ -142,7 +142,7 @@ public:
         std::chrono::seconds switchover_timeout {0};    /* Switchover time limit */
     };
 
-    /* What position this server has in the monitor config? Used for tiebreaking between servers. */
+    /* What position this server has in the monitor config? Used for breaking ties between servers. */
     int m_config_index = 0;
 
     Capabilities m_capabilities;                    /* Server capabilities */
@@ -309,7 +309,7 @@ public:
     /**
      * Checks if this server can replicate from master. Only considers gtid:s and only detects obvious
      * errors. The non-detected errors will mostly be detected once the slave tries to start replicating.
-     * Before calling this, update the gtid:s of the master so that the the gtid:s of the master are more
+     * Before calling this, update the gtid:s of the master so that the gtid:s of the master are more
      * recent than those of this server.
      *
      * @param master_info Master server

@@ -204,7 +204,7 @@ enum qc_kill_type_t
 struct QC_KILL
 {
     std::string    target;                      // The string form target of the KILL
-    bool           user = false;                // If true, the the value in `target` is the name of a user.
+    bool           user = false;                // If true, the value in `target` is the name of a user.
     bool           soft = false;                // If true, the SOFT option was used
     qc_kill_type_t type = QC_KILL_CONNECTION;   // Type of the KILL command
 };
@@ -325,7 +325,7 @@ qc_query_op_t qc_get_operation(GWBUF* stmt);
 std::string_view qc_get_prepare_name(GWBUF* stmt);
 
 /**
- * Returns the preparable statement of a PREPARE statment. Other query classifier
+ * Returns the preparable statement of a PREPARE statement. Other query classifier
  * functions can then be used on the returned statement to find out information
  * about the preparable statement. The returned @c GWBUF should not be used for
  * anything else but for obtaining information about the preparable statement.
@@ -532,7 +532,7 @@ void qc_set_server_version(uint64_t version);
 uint64_t qc_get_server_version();
 
 /**
- * String represenation for the parse result.
+ * String representation for the parse result.
  *
  * @param result A parsing result.
  *
@@ -541,7 +541,7 @@ uint64_t qc_get_server_version();
 const char* qc_result_to_string(qc_parse_result_t result);
 
 /**
- * String represenation for the kill type.
+ * String representation for the kill type.
  *
  * @param type A kill type.
  *

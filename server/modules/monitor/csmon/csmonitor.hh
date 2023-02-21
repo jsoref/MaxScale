@@ -90,7 +90,7 @@ private:
     void cs_add_node(json_t** ppOutput, mxb::Semaphore* pSem,
                      const std::string& host, const std::chrono::seconds& timeout);
     void cs_config_get(json_t** ppOutput, mxb::Semaphore* pSem, CsMonitorServer* pServer);
-    void cs_mode_set(json_t** ppOuput, mxb::Semaphore* pSem,
+    void cs_mode_set(json_t** ppOutput, mxb::Semaphore* pSem,
                      cs::ClusterMode mode, const std::chrono::seconds& timeout);
     void cs_remove_node(json_t** ppOutput, mxb::Semaphore* pSem,
                         const std::string& host, const std::chrono::seconds& timeout);

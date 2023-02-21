@@ -57,7 +57,7 @@ CREATE_SUBDIRS         = NO
 # Croatian, Czech, Danish, Dutch, Esperanto, Farsi, Finnish, French, German,
 # Greek, Hungarian, Italian, Japanese, Japanese-en (Japanese with English
 # messages), Korean, Korean-en, Lithuanian, Norwegian, Macedonian, Persian,
-# Polish, Portuguese, Romanian, Russian, Serbian, Serbian-Cyrilic, Slovak,
+# Polish, Portuguese, Romanian, Russian, Serbian, Serbian-Cyrillic, Slovak,
 # Slovene, Spanish, Swedish, Ukrainian, and Vietnamese.
 
 OUTPUT_LANGUAGE        = English
@@ -211,7 +211,7 @@ OPTIMIZE_OUTPUT_VHDL   = NO
 # With this tag you can assign which parser to use for a given extension.
 # Doxygen has a built-in mapping, but you can override or extend it using this tag.
 # The format is ext=language, where ext is a file extension, and language is one of
-# the parsers supported by doxygen: IDL, Java, Javascript, C#, C, C++, D, PHP,
+# the parsers supported by doxygen: IDL, Java, JavaScript, C#, C, C++, D, PHP,
 # Objective-C, Python, Fortran, VHDL, C, C++. For instance to make doxygen treat
 # .inc files as Fortran files (default is PHP), and .f files as C (default is Fortran),
 # use: inc=Fortran f=C. Note that for custom extensions you also need to set FILE_PATTERNS otherwise the files are not read by doxygen.
@@ -281,7 +281,7 @@ TYPEDEF_HIDES_STRUCT   = NO
 # causing a significant performance penality.
 # If the system has enough physical memory increasing the cache will improve the
 # performance by keeping more symbols in memory. Note that the value works on
-# a logarithmic scale so increasing the size by one will rougly double the
+# a logarithmic scale so increasing the size by one will roughly double the
 # memory usage. The cache size is given by this formula:
 # 2^(16+SYMBOL_CACHE_SIZE). The valid range is 0..9, the default is 0,
 # corresponding to a cache size of 2^16 = 65536 symbols
@@ -536,7 +536,7 @@ WARN_IF_UNDOCUMENTED   = YES
 
 WARN_IF_DOC_ERROR      = YES
 
-# This WARN_NO_PARAMDOC option can be abled to get warnings for
+# This WARN_NO_PARAMDOC option can be enabled to get warnings for
 # functions that are documented, but have no documentation for their parameters
 # or return value. If set to NO (the default) doxygen will only warn about
 # wrong or incomplete parameter documentation, but not about the absence of
@@ -788,7 +788,7 @@ HTML_HEADER            =
 HTML_FOOTER            =
 
 # If the HTML_TIMESTAMP tag is set to YES then the generated HTML
-# documentation will contain the timesstamp.
+# documentation will contain the timestamp.
 
 HTML_TIMESTAMP         = NO
 
@@ -1363,7 +1363,7 @@ HAVE_DOT               = YES
 # directory and reference it in all dot files that doxygen generates. This
 # font does not include all possible unicode characters however, so when you need
 # these (or just want a differently looking font) you can specify the font name
-# using DOT_FONTNAME. You need need to make sure dot is able to find the font,
+# using DOT_FONTNAME. You need to make sure dot is able to find the font,
 # which can be done by putting it in a standard location or by setting the
 # DOTFONTPATH environment variable or by setting DOT_FONTPATH to the directory
 # containing the font.

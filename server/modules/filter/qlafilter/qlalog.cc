@@ -35,7 +35,7 @@ QlaLog::QlaLog()
 {
 }
 
-/// NOTE: There is a very small caveat with flusing only the last element in the queue.
+/// NOTE: There is a very small caveat with flushing only the last element in the queue.
 ///       If within the queue the current file changes, then the explicit flush to the
 ///       current file will happen before the flush of the previous file, which is
 ///       flushed when the smart_ptr to it is destroyed after this call finishes.

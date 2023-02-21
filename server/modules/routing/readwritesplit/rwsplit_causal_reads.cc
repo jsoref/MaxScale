@@ -15,7 +15,7 @@
 #include "rwsplitsession.hh"
 
 /**
- * @bref discard the result of MASTER_GTID_WAIT statement
+ * @brief discard the result of MASTER_GTID_WAIT statement
  *
  * The result will be an error or an OK packet.
  *
@@ -60,7 +60,7 @@ GWBUF* RWSplitSession::discard_master_wait_gtid_result(GWBUF* buffer)
 }
 
 /**
- * @bref After discarded the wait result, we need correct the seqence number of every packet
+ * @brief After discarded the wait result, we need correct the seqence number of every packet
  *
  * @param buffer origin reply buffer
  *
@@ -191,7 +191,7 @@ bool RWSplitSession::continue_causal_read()
 }
 
 /*
- * Add a wait gitd query in front of user's query to achive causal read
+ * Add a wait gitd query in front of user's query to achieve causal read
  *
  * @param origin  Original buffer
  *
@@ -200,7 +200,7 @@ bool RWSplitSession::continue_causal_read()
 GWBUF* RWSplitSession::add_prefix_wait_gtid(GWBUF* origin)
 {
     /**
-     * Pack wait function and client query into a multistatments will save a round trip latency,
+     * Pack wait function and client query into a multistatement will save a round trip latency,
      * and prevent the client query being executed on timeout.
      * For example:
      * SET @maxscale_secret_variable=(SELECT CASE WHEN MASTER_GTID_WAIT('232-1-1', 10) = 0
@@ -308,7 +308,7 @@ mxs::Buffer RWSplitSession::reset_gtid_probe()
                        m_current_query.get_sql().c_str());
     mxb_assert_message(!m_query_queue.empty(), "Query queue should contain at least one query");
 
-    // Retry the the original query that triggered the GTID probe.
+    // Retry the original query that triggered the GTID probe.
     auto buffer = std::move(m_query_queue.front());
     m_query_queue.pop_front();
 

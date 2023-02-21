@@ -26,7 +26,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-4393](https://jira.mariadb.org/browse/MXS-4393) Authentication failures during shard mapping are not handled correctly
 * [MXS-4392](https://jira.mariadb.org/browse/MXS-4392) Rebuild-server should read gtid from xtrabackup_binlog_info-file
 * [MXS-4389](https://jira.mariadb.org/browse/MXS-4389) Crash in handleError
-* [MXS-4388](https://jira.mariadb.org/browse/MXS-4388) LOAD DATA LOCAL INFILE and changing autocomit causing stuck
+* [MXS-4388](https://jira.mariadb.org/browse/MXS-4388) LOAD DATA LOCAL INFILE and changing autocommit causing stuck
 * [MXS-4378](https://jira.mariadb.org/browse/MXS-4378) Obsolete "Run" button label
 * [MXS-4369](https://jira.mariadb.org/browse/MXS-4369) Save Script Is Not Working
 * [MXS-4365](https://jira.mariadb.org/browse/MXS-4365) Query tab is going infinite loop, unable to use the query tab after the infinite loop

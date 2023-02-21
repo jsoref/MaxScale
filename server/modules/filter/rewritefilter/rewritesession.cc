@@ -11,7 +11,7 @@
  * Public License.
  */
 
-#define MXB_MODULE_NAME "rewitefilter"
+#define MXB_MODULE_NAME "rewritefilter"
 #include "rewritesession.hh"
 #include "rewritefilter.hh"
 

@@ -701,7 +701,7 @@ protected:
         // How often should a disk space check be made at most.
         milliseconds disk_space_check_interval;
 
-        // TODO: Either add arbitratily deep nesting of structs in Configurations or separate these into
+        // TODO: Either add arbitrarily deep nesting of structs in Configurations or separate these into
         // something else. Now the values are stored twice.
         MonitorServer::ConnectionSettings conn_settings;
 
@@ -856,7 +856,7 @@ public:
      * @brief Starts the monitor.
      *
      * - Calls @c has_sufficient_permissions(), if it has not been done earlier.
-     * - Updates the 'script' and 'events' configuration paramameters.
+     * - Updates the 'script' and 'events' configuration parameters.
      * - Starts the monitor thread.
      *
      * - Once the monitor thread starts, it will

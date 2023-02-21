@@ -129,7 +129,7 @@ public:
     /**
      * @brief add_result adds result to global_result and prints error message if result is not 0
      * @param result 0 if step PASSED
-     * @param format ... message to pring if result is not 0
+     * @param format ... message to print if result is not 0
      */
     void add_result(bool result, const char* format, ...) __attribute__ ((format(printf, 3, 4)));
 
@@ -199,7 +199,7 @@ public:
     void log_printf(const char* format, ...) mxb_attribute((format(printf, 2, 3)));
 
     /**
-     * @brief Creats t1 table, insert data into it and checks if data can be correctly read from all Maxscale
+     * @brief Creates t1 table, insert data into it and checks if data can be correctly read from all Maxscale
      * services
      * @param Test Pointer to TestConnections object that contains references to test setup
      * @param N number of INSERTs; every next INSERT is longer 16 times in compare with previous one: for N=4
@@ -259,7 +259,7 @@ public:
 
     /**
      * @brief CheckMaxscaleAlive Checks if MaxScale is alive
-     * Reads test setup info from enviromental variables and tries to connect to all Maxscale services to
+     * Reads test setup info from environmental variables and tries to connect to all Maxscale services to
      * check if i is alive.
      * Also 'show processlist' query is executed using all services
      * @return 0 in case if success
@@ -267,7 +267,7 @@ public:
     int check_maxscale_alive();
 
     /**
-     * @brief try_query Executes SQL query and repors error
+     * @brief try_query Executes SQL query and reports error
      * @param conn MYSQL struct
      * @param sql SQL string
      * @return 0 if ok

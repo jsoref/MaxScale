@@ -1358,7 +1358,7 @@ uint32_t DCB::process_events(uint32_t events)
         rc |= mxb::poll_action::READ;
 
         int return_code = 1;
-        /** SSL authentication is still going on, we need to call DCB::ssl_handehake
+        /** SSL authentication is still going on, we need to call DCB::ssl_handshake
          * until it return 1 for success or -1 for error */
         if (m_encryption.state == SSLState::HANDSHAKE_REQUIRED)
         {
@@ -1617,7 +1617,7 @@ bool DCB::disable_events()
 }
 
 /**
- * @brief DCB callback for upstream throtting
+ * @brief DCB callback for upstream throttling
  * Called by any backend dcb when its writeq is above high water mark or
  * it has reached high water mark and now it is below low water mark,
  * Calling `poll_remove_dcb` or `poll_add_dcb' on client dcb to throttle
@@ -1704,7 +1704,7 @@ bool backend_dcb_add_func(DCB* dcb, void* data)
 }
 
 /**
- * @brief DCB callback for downstream throtting
+ * @brief DCB callback for downstream throttling
  * Called by client dcb when its writeq is above high water mark or
  * it has reached high water mark and now it is below low water mark,
  * Calling `poll_remove_dcb` or `poll_add_dcb' on all backend dcbs to

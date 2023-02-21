@@ -76,7 +76,7 @@ public:
      * Initialize the config object. To be called *once* at program startup.
      *
      * @param argc  The argc provided to main.
-     * @param argv  The argv procided to main.
+     * @param argv  The argv provided to main.
      *
      * @return The MaxScale global configuration.
      */
@@ -284,7 +284,7 @@ public:
 
     int64_t       n_threads;                    /**< Number of polling threads */
     std::string   qc_name;                      /**< The name of the query classifier to load */
-    std::string   qc_args;                      /**< Arguments for the query classifieer */
+    std::string   qc_args;                      /**< Arguments for the query classifier */
     qc_sql_mode_t qc_sql_mode;                  /**< The query classifier sql mode */
     std::string   admin_host;                   /**< Admin interface host */
     int64_t       admin_port;                   /**< Admin interface port */
@@ -299,7 +299,7 @@ public:
     mxb::ssl_version::Version admin_ssl_version;    /**< Admin allowed SSL versions */
     mxs::JwtAlgo              admin_jwt_algorithm;  /**< JWT signature key */
     std::string               admin_jwt_key;        /**< Key used with symmetric JWT algorithms */
-    std::string               admin_oidc_url;       /**< OIDC server for for external JWTs */
+    std::string               admin_oidc_url;       /**< OIDC server for external JWTs */
     std::string               admin_verify_url;     /**< URL that points to a verification server */
 
     std::string  local_address;                 /**< Local address to use when connecting */

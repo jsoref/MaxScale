@@ -50,7 +50,7 @@
 //
 // Note that we do not modify the set; deleting will not be performed other
 // than in error situations (and at the time of this writing is considered to
-// be removed entirelly) and it does not really matter if an non-existing key
+// be removed entirely) and it does not really matter if an non-existing key
 // is in the set.
 //
 // Invalidating
@@ -630,7 +630,7 @@ public:
                         break;
 
                     default:
-                        MXB_WARNING("Unexpected redis redis return type (%s) received.",
+                        MXB_WARNING("Unexpected redis return type (%s) received.",
                                     redis_type_to_string(reply.type()));
                 }
             }
@@ -843,7 +843,7 @@ public:
             }
             else if (reply.is_status())
             {
-                MXB_ERROR("Expected status OK as reponse to FLUSHALL, but received %s.", reply.str());
+                MXB_ERROR("Expected status OK as response to FLUSHALL, but received %s.", reply.str());
             }
             else
             {
@@ -1222,7 +1222,7 @@ private:
 
         // Does this work? Probably not in all cases; it appears that WATCH
         // needs to be used to prevent problems caused by the fetching of the keys
-        // and the deleteing of the keys (and values) being done in separate
+        // and the deleting of the keys (and values) being done in separate
         // transactions.
 
         return action;

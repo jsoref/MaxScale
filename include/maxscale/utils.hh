@@ -140,7 +140,7 @@ long get_cpu_count();
  * Get number of virtual CPUs (cores) that are available to the process
  *
  * This differs from get_processor_count() by taking CPU affinities and cgroup CPU quotas into account. This
- * results in a "virtual" CPU count that estimates how much CPU resoures, in terms of CPU cores, are
+ * results in a "virtual" CPU count that estimates how much CPU resources, in terms of CPU cores, are
  * available. Note that the returned value may be a fraction.
  *
  * @return The "virtual" CPU count available to this process. If no limits or quotas have been placed, this
@@ -243,7 +243,7 @@ struct CloserTraits
  *     {
  *         Closer<FILE*> file(pFile);
  *
- *         // Use pFile, call functions that potentually may throw
+ *         // Use pFile, call functions that potentially may throw
  *     }
  * }
  * @endcode
@@ -257,7 +257,7 @@ class Closer
 {
 public:
     /**
-     * Creates the closer and stores the provided resourece. Note that
+     * Creates the closer and stores the provided resource. Note that
      * the constructor assumes that the resource exists already.
      *
      * @param resource  The resource whose closing is to be ensured.
@@ -371,7 +371,7 @@ struct RegistryTraits
 };
 
 /**
- * Class Registy wraps a map, allowing only a few operations on it. The intended
+ * Class Registry wraps a map, allowing only a few operations on it. The intended
  * use is simple registries, such as the session registry in Worker. The owner
  * can expose a reference to this class without exposing all the methods the
  * underlying container implements. When instantiating with a new EntryType, the

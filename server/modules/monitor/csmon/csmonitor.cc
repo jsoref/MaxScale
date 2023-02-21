@@ -1493,7 +1493,7 @@ void CsMonitor::populate_services()
 {
     mxb_assert(!is_running());
 
-    // The servers that the Columnstor monitor has been configured with are
+    // The servers that the Columnstore monitor has been configured with are
     // only used for bootstrapping and services will not be populated
     // with them.
 }

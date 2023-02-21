@@ -12,7 +12,7 @@
  * Public License.
  */
 
-// To ensure that ss_info_assert asserts also when builing in non-debug mode.
+// To ensure that ss_info_assert asserts also when building in non-debug mode.
 #ifndef SS_DEBUG
 #define SS_DEBUG
 #endif
@@ -371,10 +371,10 @@ int test_path(config::Path& value)
 
     static const TestEntry<config::Path::value_type> entries[] =
     {
-        {strpath,        true, strpath},
-        {"/tmp",         true, "/tmp" },
+        {strpath,       true, strpath},
+        {"/tmp",        true, "/tmp" },
 
-        {"non-existent", false}
+        {"nonexistent", false}
     };
 
     return test(value, entries, elements_in_array(entries));
@@ -392,9 +392,9 @@ int test_pathlist(config::PathList& value)
         {"/tmp",                 true, {"/tmp" }, "/tmp"                },
         {combined.c_str(),       true, {strpath, "/tmp"}, combined.c_str()      },
         {"/etc/os-release:/tmp", true, {"/etc/os-release", "/tmp"}, "/etc/os-release:/tmp"},
-        {"non-existent",         false},
-        {"/non-existent",        false},
-        {"/tmp:/non-existent",   false},
+        {"nonexistent",          false},
+        {"/nonexistent",         false},
+        {"/tmp:/nonexistent",    false},
     };
 
     return test(value, entries, elements_in_array(entries));

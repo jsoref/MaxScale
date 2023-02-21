@@ -264,7 +264,7 @@ Master communication.
 
 This parameter sets the maximum length of the certificate authority chain that
 will be accepted. Legal values are positive integers. This applies to SSL
-connection to master server that could be acivated either by writing options in
+connection to master server that could be activated either by writing options in
 master.ini or later via a _CHANGE MASTER TO_ command. This parameter cannot be
 modified at runtime. The default verification depth is 9.
 
@@ -335,7 +335,7 @@ will send events from it's first available binlog file).
 Example of MaxScale connection to a MariaDB 10.X Master
 
 ```
-# mysql -h $MAXSCALE_HOST -P $MAXCALE_PORT
+# mysql -h $MAXSCALE_HOST -P $MAXSCALE_PORT
 MariaDB> SET @@global.gtid_slave_pos='0-198-123';
 MariaDB> CHANGE MASTER TO
          MASTER_HOST='192.168.10.5',
@@ -417,7 +417,7 @@ for more information.
 
 The initial setup is performed exactly like when there is but one default master.
 ```
-# mysql -h $MAXSCALE_HOST -P $MAXCALE_PORT
+# mysql -h $MAXSCALE_HOST -P $MAXSCALE_PORT
 MariaDB> SET @@global.gtid_slave_pos='0-198-123';
 MariaDB> CHANGE MASTER TO
          MASTER_HOST='192.168.10.5',

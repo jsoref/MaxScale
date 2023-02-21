@@ -407,7 +407,7 @@ inline const char* qcme_string_get(const char* s)
     return s;
 }
 
-#define QC_CF_IMPLICIT_COMMIT_BEGIN CF_IMPLICT_COMMIT_BEGIN
+#define QC_CF_IMPLICIT_COMMIT_BEGIN CF_IMPLICIT_COMMIT_BEGIN
 #define QC_CF_IMPLICIT_COMMIT_END   CF_IMPLICIT_COMMIT_END
 
 inline SELECT_LEX* qcme_get_first_select_lex(LEX* lex)
@@ -553,7 +553,7 @@ bool ensure_query_is_parsed(GWBUF* query)
     if (!parsed)
     {
         // Instead of modifying global_system_variables, from which
-        // thd->variables.sql_mode will be initialied, we should modify
+        // thd->variables.sql_mode will be initialized, we should modify
         // thd->variables.sql_mode _after_ it has been created and
         // initialized.
         //
@@ -915,7 +915,7 @@ return_here:
  * set_var_role, etc. that all are derived from set_var_base. However, there
  * is no type-information available in set_var_base, which is the type of the
  * instances when accessed from the lexer. Consequently, we cannot know what
- * kind of statment it is based on that, only whether it is a system variable
+ * kind of statement it is based on that, only whether it is a system variable
  * or not.
  *
  * Consequently, we just look at the string and deduce whether it is a
@@ -1765,7 +1765,7 @@ static int is_autocommit_stmt(LEX* lex)
             {
                 mxb_assert(rc >= 0 && rc <= 2);
                 /**
-                 * rc is the position of matchin string in
+                 * rc is the position of matching string in
                  * typelib's value array.
                  * 1=OFF, 2=ON.
                  */
@@ -2487,7 +2487,7 @@ int32_t qc_mysql_get_preparable_stmt(GWBUF* stmt, GWBUF** preparable_stmt)
                         // Is followed by the statement.
                         char* s = (char*)GWBUF_DATA(preperable_packet) + 5;
 
-                        // We copy the statment, blindly replacing all '?':s (always)
+                        // We copy the statement, blindly replacing all '?':s (always)
                         // and ':N' (in Oracle mode) with '0':s as otherwise the parsing of the
                         // preparable statement as a regular statement will not always succeed.
                         qc_sql_mode_t sql_mode = this_thread.sql_mode;
@@ -3277,14 +3277,14 @@ static void update_field_infos(parsing_info_t* pi,
             Item** items = func_item->arguments();
             size_t n_items = func_item->argument_count();
 
-            // From comment in Item_func_or_sum(server/sql/item.h) abount the
+            // From comment in Item_func_or_sum(server/sql/item.h) about the
             // func_name() member function:
             /*
              *  This method is used for debug purposes to print the name of an
              *  item to the debug log. The second use of this method is as
              *  a helper function of print() and error messages, where it is
              *  applicable. To suit both goals it should return a meaningful,
-             *  distinguishable and sintactically correct string. This method
+             *  distinguishable and syntactically correct string. This method
              *  should not be used for runtime type identification, use enum
              *  {Sum}Functype and Item_func::functype()/Item_sum::sum_func()
              *  instead.

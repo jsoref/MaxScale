@@ -12,7 +12,7 @@
  * Public License.
  */
 
-// To ensure that ss_info_assert asserts also when builing in non-debug mode.
+// To ensure that ss_info_assert asserts also when building in non-debug mode.
 #if !defined (SS_DEBUG)
 #define SS_DEBUG
 #endif
@@ -49,8 +49,8 @@ static int test1()
     mxb_assert_message(server, "Allocating the server should not fail");
 
     fprintf(stderr, "\t..done\nTesting Unique Name for Server.");
-    mxb_assert_message(NULL == ServerManager::find_by_unique_name("non-existent"),
-                       "Should not find non-existent unique name.");
+    mxb_assert_message(NULL == ServerManager::find_by_unique_name("nonexistent"),
+                       "Should not find nonexistent unique name.");
     mxb_assert_message(server == ServerManager::find_by_unique_name("uniquename"),
                        "Should find by unique name.");
     fprintf(stderr, "\t..done\nTesting Status Setting for Server.");

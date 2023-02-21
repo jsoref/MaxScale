@@ -854,7 +854,7 @@ static void log_startup_message(int eno, const char* message)
  * Log startup error.
  *
  * - If possible, log message as an error to the log.
- * - Always print the message to stdeerr.
+ * - Always print the message to stderr.
  *
  * @param eno     Errno value, ignored if 0.
  * @param format  Printf format string.
@@ -871,7 +871,7 @@ static void log_startup_error(int eno, const char* format, ...)
  * Log startup error.
  *
  * - If possible, log message as an error to the log.
- * - Always print the message to stdeerr.
+ * - Always print the message to stderr.
  *
  * @param format  Printf format string.
  * @param ...     Arguments according to @c format.
@@ -1416,7 +1416,7 @@ bool set_dirs(const char* basedir)
 }
 
 /**
- * A RAII class that at construction time takes overship of pipe
+ * A RAII class that at construction time takes ownership of pipe
  * handle and at destruction time notifies parent if there is
  * a need for that.
  */
@@ -2296,7 +2296,7 @@ int main(int argc, char** argv)
         }
 
         // Finalize the internal query classifier. The actual plugin was finalized
-        // via the module finalizarion above.
+        // via the module finalization above.
         qc_process_end(QC_INIT_SELF);
     }
     else

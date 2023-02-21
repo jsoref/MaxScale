@@ -128,9 +128,9 @@ private:
 /**
  * @brief A class to handle backend nodes
  * Contains references up to 256 nodes, info about IP, port, ssh key, use name and password for each node
- * Node parameters should be defined in the enviromental variables in the follwing way:
+ * Node parameters should be defined in the environmental variables in the following way:
  * prefix_N - N number of nodes in the setup
- * prefix_NNN - IP adress of the node (NNN 3 digits node index)
+ * prefix_NNN - IP address of the node (NNN 3 digits node index)
  * prefix_port_NNN - MariaDB port number of the node
  * prefix_User - User name to access backend setup (should have full access to 'test' DB with GRANT OPTION)
  * prefix_Password - Password to access backend setup
@@ -226,7 +226,7 @@ public:
     bool stop_nodes();
 
     /**
-     * @brief stop_slaves isues 'stop slave;' to all nodes
+     * @brief stop_slaves issues 'stop slave;' to all nodes
      * @return  0 in case of success
      */
     int stop_slaves();
@@ -412,7 +412,7 @@ public:
     virtual std::string cnf_servers();
 
     /**
-     * @brief cnf_servers_line Generates list of backend servers for serivces definition in maxscale.cnf
+     * @brief cnf_servers_line Generates list of backend servers for services definition in maxscale.cnf
      * @return List of servers, e.g server1,server2,server3,...
      */
     std::string cnf_servers_line();

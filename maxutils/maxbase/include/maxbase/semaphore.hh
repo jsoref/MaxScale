@@ -40,7 +40,7 @@ public:
      * @param initial_count  The initial count of the semaphore.
      *
      * @attention If the value `initial_count` is larger than `SEM_VALUE_MAX`,
-     *            the the value will be adjusted down to `SEM_VALUE_MAX`.
+     *            the value will be adjusted down to `SEM_VALUE_MAX`.
      */
     Semaphore(uint32_t initial_count = 0)
     {
@@ -78,7 +78,7 @@ public:
      * one of them will subsequently return.
      *
      * @return `True` if the semaphore could be posed, otherwise `false`.
-     *         If `false` is returned, then the maximum count of the sempahore
+     *         If `false` is returned, then the maximum count of the semaphore
      *         has been reached.
      */
     bool post() const
@@ -194,7 +194,7 @@ public:
      *
      * @return `True` if the semaphore was waited for, `false` otherwise.
      *
-     * @attention If the function returns `false` and `signal_approch` is
+     * @attention If the function returns `false` and `signal_approach` is
      *            `HONOUR_SIGNALS` then the caller must check the value of
      *            `errno` to find out whether the call was timed out or
      *            interrupted. In the former case the value will be `EAGAIN`
@@ -221,7 +221,7 @@ public:
     /**
      * @brief Waits on the semaphore.
      *
-     * Waits on the sempahore at most until the specified time.
+     * Waits on the semaphore at most until the specified time.
      *
      * @param ts               The *absolute* time until which the waiting at
      *                         most is performed.
@@ -229,7 +229,7 @@ public:
      *
      * @return True if the waiting could be performed, false otherwise.
      *
-     * @attention If the function returns `false` and `signal_approch` is
+     * @attention If the function returns `false` and `signal_approach` is
      *            `HONOUR_SIGNALS` then the caller must check the value of
      *            `errno` to find out whether the call was timed out or
      *            interrupted. In the former case the value will be `ETIMEDOUT`
@@ -257,7 +257,7 @@ public:
     /**
      * @brief Waits on the semaphore.
      *
-     * Waits on the sempahore the specified number of times, at most until the
+     * Waits on the semaphore the specified number of times, at most until the
      * specified time.
      *
      * @param n_wait           How many times should be waited.
@@ -270,7 +270,7 @@ public:
      *         value will be less than `n_wait`.
      *
      * @attention If the function returns a value less than `n_count` and
-     *            `signal_approch` is `HONOUR_SIGNALS` then the caller must check
+     *            `signal_approach` is `HONOUR_SIGNALS` then the caller must check
      *            the value of `errno` to find out whether the call was timed out or
      *            interrupted. In the former case the value will be `ETIMEDOUT`
      *            and in the latter `EINTR.
@@ -297,18 +297,18 @@ public:
     /**
      * @brief Waits on the semaphore.
      *
-     * Waits on the sempahore at most until the specified amount of time
+     * Waits on the semaphore at most until the specified amount of time
      * has passed.
      *
      * @param seconds          How many seconds to wait at most.
-     * @param nseconds         How many nanonseconds to wait at most.
+     * @param nseconds         How many nanoseconds to wait at most.
      * @param signal_approach  Whether signals should be ignored or honoured.
      *
      * @return True if the waiting could be performed, false otherwise.
      *
      * @attention `nseconds` must be less than 1000000000.
      *
-     * @attention If the function returns `false` and `signal_approch` is
+     * @attention If the function returns `false` and `signal_approach` is
      *            `HONOUR_SIGNALS` then the caller must check the value of
      *            `errno` to find out whether the call was timed out or
      *            interrupted. In the former case the value will be `ETIMEDOUT`
@@ -326,12 +326,12 @@ public:
     /**
      * @brief Waits on the semaphore.
      *
-     * Waits on the sempahore the specified number of times at most until the
+     * Waits on the semaphore the specified number of times at most until the
      * specified time.
      *
      * @param n_wait           How many times should be waited.
      * @param seconds          How many seconds to wait at most.
-     * @param nseconds         How many nanonseconds to wait at most.
+     * @param nseconds         How many nanoseconds to wait at most.
      * @param signal_approach  Whether signals should be ignored or honoured.
      *
      * @return How many times the semaphore has been waited on. If the
@@ -339,7 +339,7 @@ public:
      *         value will be less than `n_wait`.
      *
      * @attention If the function returns a value less than `n_count` and
-     *            `signal_approch` is `HONOUR_SIGNALS` then the caller must check
+     *            `signal_approach` is `HONOUR_SIGNALS` then the caller must check
      *            the value of `errno` to find out whether the call was timed out or
      *            interrupted. In the former case the value will be `ETIMEDOUT`
      *            and in the latter `EINTR.
@@ -357,7 +357,7 @@ public:
     /**
      * @brief Waits on the semaphore.
      *
-     * Waits on the sempahore at most until the specified amount of time
+     * Waits on the semaphore at most until the specified amount of time
      * has passed.
      *
      * @param seconds          How many seconds to wait at most.
@@ -365,7 +365,7 @@ public:
      *
      * @return True if the waiting could be performed, false otherwise.
      *
-     * @attention If the function returns `false` and `signal_approch` is
+     * @attention If the function returns `false` and `signal_approach` is
      *            `HONOUR_SIGNALS` then the caller must check the value of
      *            `errno` to find out whether the call was timed out or
      *            interrupted. In the former case the value will be `ETIMEDOUT`
@@ -380,7 +380,7 @@ public:
     /**
      * @brief Waits on the semaphore.
      *
-     * Waits on the sempahore the specified number of times at most until the
+     * Waits on the semaphore the specified number of times at most until the
      * specified time.
      *
      * @param n_wait           How many times should be waited.
@@ -392,7 +392,7 @@ public:
      *         value will be less than `n_wait`.
      *
      * @attention If the function returns a value less than `n_count` and
-     *            `signal_approch` is `HONOUR_SIGNALS` then the caller must check
+     *            `signal_approach` is `HONOUR_SIGNALS` then the caller must check
      *            the value of `errno` to find out whether the call was timed out or
      *            interrupted. In the former case the value will be `ETIMEDOUT`
      *            and in the latter `EINTR.

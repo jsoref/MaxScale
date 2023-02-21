@@ -115,10 +115,10 @@ This component allows to read parameters and edit parameters. It means to be use
 
 PROPS:
 - usePortOrSocket: accepts boolean , if true, get portValue, and socketValue,
-  passing them to parameter-input for handling special input field when editting server or listener.
+  passing them to parameter-input for handling special input field when editing server or listener.
   If editing listener, address parameter won't be required.
 - overridingModuleParams props allows to override parameters in module_parameters. This props is only used
-  in case module_prameters doesn't include type info for nested object. e.g. log_throttling parameter
+  in case module_parameters doesn't include type info for nested object. e.g. log_throttling parameter
  */
 import { mapState, mapGetters } from 'vuex'
 import { OVERLAY_TRANSPARENT_LOADING } from '@share/overlayTypes'
@@ -132,7 +132,7 @@ export default {
         overridingModuleParams: { type: Array },
         updateResourceParameters: { type: Function, required: false },
         onEditSucceeded: { type: Function, required: false },
-        // specical props to manipulate required or dependent input attribute
+        // special props to manipulate required or dependent input attribute
         usePortOrSocket: { type: Boolean, default: false },
         isTree: { type: Boolean, default: false },
         expandAll: { type: Boolean, default: false },

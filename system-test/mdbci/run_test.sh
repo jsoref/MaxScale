@@ -12,8 +12,8 @@
 # Template file can contain references to any variables -
 # all ${variable_name} will be replaced with values
 
-# $name - name of test run. It can be any string of leytters or digits
-# If it is not defined, name will be automatically genereted
+# $name - name of test run. It can be any string of letters or digits
+# If it is not defined, name will be automatically generated
 # using $box and current date and time
 
 # $product - 'mariadb' or 'mysql'
@@ -24,12 +24,12 @@
 # same as $version by default
 
 # $target - name of binary repository
-# (name of subdirectroy http://max-tst-01.mariadb.com/ci-repository/)
+# (name of subdirectory http://max-tst-01.mariadb.com/ci-repository/)
 
 # $team_keys - path to the file with open ssh keys to be
 # installed on all VMs (default ${HOME}/team_keys)
 
-# $do_not_destroy_vm - if 'yes' VM won't be destored afther the test
+# $do_not_destroy_vm - if 'yes' VM won't be destroyed after the test
 
 # $test_set - parameters to be send to 'ctest' (e.g. '-I 1,100',
 # '-LE HEAVY'

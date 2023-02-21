@@ -29,9 +29,9 @@ port=12345
 
 MaxScale uses the PAM authenticator plugin to authenticate users with *plugin*
 set to "pam" in the *mysql.user*-table. The PAM service name of a user is read
-from the *authetication_string*-column. The matching PAM service in the
+from the *authentication_string*-column. The matching PAM service in the
 operating system PAM config is used for authenticating the user. If the
-*authetication_string* for a user is empty, the fallback service "mysql" is
+*authentication_string* for a user is empty, the fallback service "mysql" is
 used.
 
 PAM service configuration is out of the scope of this document, see
@@ -50,7 +50,7 @@ Boolean, default value is "false". If enabled, MaxScale communicates with the
 client as if using
 [mysql_clear_password](https://mariadb.com/kb/en/connection/#mysql_clear_password-plugin).
 This setting has no effect on MaxScale-to-backend communication, which adapts to
-either "dialog" or "mysql_clear_password", depeding on which one the backend
+either "dialog" or "mysql_clear_password", depending on which one the backend
 suggests. This setting is meant to be used with the similarly named MariaDB
 Server setting.
 
@@ -92,7 +92,7 @@ If set to "mariadb", MaxScale will authenticate clients to backends using
 standard MariaDB authentication. Authentication to MaxScale itself still uses
 PAM. MaxScale asks the local PAM system if the client username was mapped
 to another username during authentication, and use the mapped username when
-logging in to backends. Passwords for the mapped users can be given in a file,
+logging into backends. Passwords for the mapped users can be given in a file,
 see `pam_mapped_pw_file` below. If passwords are not given, MaxScale will try to
 authenticate without a password. Because of this, normal PAM users and mapped
 users cannot be used on the same listener.
@@ -128,7 +128,7 @@ only read during listener creation (typically MaxScale start) or when a listener
 is modified during runtime. The file should contain passwords for the mapped
 users. When a client is authenticating, MaxScale searches the password data for a
 matching username. If one is found, MaxScale uses the supplied password when
-logging in to backends. Otherwise, MaxScale tries to authenticate without a
+logging into backends. Otherwise, MaxScale tries to authenticate without a
 password.
 
 One array, "users_and_passwords", is read from the file. Each array element in the array must define the following fields:
@@ -202,7 +202,7 @@ enough.
 The general PAM authentication scheme is difficult for a proxy such as MaxScale.
 An application using the PAM interface needs to define a *conversation function*
 to allow the OS PAM modules to communicate with the client, possibly exchanging
-multiple messages. This works when a client logs in to a normal server, but not
+multiple messages. This works when a client logs into a normal server, but not
 with MaxScale since it needs to autonomously log into multiple backends. For
 MaxScale to successfully log into the servers, the messages and answers need to
 be predefined. The passwords given to MaxScale need to work as is when MaxScale

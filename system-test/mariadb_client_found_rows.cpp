@@ -5,7 +5,7 @@
  * - open connection with CLIENT_FOUND_ROWS flag
  * - CREATE TABLE t1(id INT PRIMARY KEY, val INT, msg VARCHAR(100))
  * - INSERT INTO t1 VALUES (1, 1, 'foo'), (2, 1, 'bar'), (3, 2, 'baz'), (4, 2, 'abc')"
- * - check 'affected_rows' for folloing UPDATES:
+ * - check 'affected_rows' for following UPDATES:
  *   + UPDATE t1 SET msg='xyz' WHERE val=2" (expect 2)
  *   + UPDATE t1 SET msg='xyz' WHERE val=2 (expect 0)
  *   + UPDATE t1 SET msg='xyz' WHERE val=2 (expect 2)
@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
     execute_query_affected_rows(test.maxscale->conn_rwsplit,
                                 "UPDATE t1 SET msg='xyz' WHERE val=2",
                                 &rows);
-    test.tprintf("update #1: %ld (expeced value is 2)\n", (long) rows);
+    test.tprintf("update #1: %ld (expected value is 2)\n", (long) rows);
     if (rows != 2)
     {
         test.add_result(1, "Affected rows is not 2\n");
@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
     execute_query_affected_rows(test.maxscale->conn_rwsplit,
                                 "UPDATE t1 SET msg='xyz' WHERE val=2",
                                 &rows);
-    test.tprintf("update #2: %ld  (expeced value is 0)\n", (long) rows);
+    test.tprintf("update #2: %ld  (expected value is 0)\n", (long) rows);
     if (rows != 0)
     {
         test.add_result(1, "Affected rows is not 0\n");
@@ -103,7 +103,7 @@ int main(int argc, char* argv[])
 
     test.reset_timeout();
     execute_query_affected_rows(conn_found_rows, "UPDATE t1 SET msg='xyz' WHERE val=2", &rows);
-    test.tprintf("update #3: %ld  (expeced value is 2)\n", (long) rows);
+    test.tprintf("update #3: %ld  (expected value is 2)\n", (long) rows);
     if (rows != 2)
     {
         test.add_result(1, "Affected rows is not 2\n");

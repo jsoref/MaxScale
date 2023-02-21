@@ -428,7 +428,7 @@ bool qc_init(const QC_CACHE_PROPERTIES* cache_properties,
 void qc_end();
 
 /**
- * Intializes the query classifier.
+ * Initializes the query classifier.
  *
  * This function should be called once, provided @c qc_setup returned true,
  * before the query classifier functionality is used.

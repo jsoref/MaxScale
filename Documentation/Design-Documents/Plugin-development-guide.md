@@ -54,7 +54,7 @@ authenticator API is defined in `authenticator.h`.
 **Filter** modules process data from clients before routing. A data buffer may
 travel through multiple filters before arriving in a router. For a data buffer
 going from a backend to the client, the router receives it first and the
-filters receive it in reverse order. MaxScale includes a healthly selection of
+filters receive it in reverse order. MaxScale includes a healthy selection of
 filters ranging from logging, overwriting query data and caching. The filter
 API is defined in `filter.h`.
 
@@ -118,7 +118,7 @@ module. This function must be exported without C++ name mangling, so in C++ code
 it should be defined `extern "C"`.
 
 The information container describes the module in general and is constructed
-once during program excecution. A module may have multiple *instances* with
+once during program execution. A module may have multiple *instances* with
 different values for configuration parameters. For example, a filter module can
 be used with two different configurations in different services (or even in the
 same service). In this case the loader uses the same module information
@@ -236,7 +236,7 @@ creation when connecting to backend servers. `listen` creates a listener socket.
 
 In the ideal case modules other than the protocol modules themselves should not
 be protocol-specific. This is currently difficult to achieve, since many actions
-in the modules are dependent on protocol-speficic details. In the future,
+in the modules are dependent on protocol-specific details. In the future,
 protocol modules may be expanded to implement a generic query parsing and
 information API, allowing filters and routers to be used with different SQL
 variants.
@@ -336,7 +336,7 @@ If a router or filter sets no capabilities, `routeQuery` or `clientReply` may be
 called to route partial packets. If the routing logic does not require any
 information on the contents of the packets or even tracking the number of
 packets, this may be fine. For many cases though, receiving a data packet in a
-complete GWBUF chain or in one contiguos GWBUF is required. The former can be
+complete GWBUF chain or in one contiguous GWBUF is required. The former can be
 requested by `getCapabilities` returning *RCAP_TYPE_STMT*, the latter by
 *RCAP_TYPE_CONTIGUOUS*. Separate settings exist for queries and replies. For
 replies, an additional value, *RCAP_TYPE_RESULTSET_OUTPUT* is defined. This
@@ -406,7 +406,7 @@ configuration file.
 
 In this example, the RoundRobinRouter is compiled, installed and tested. The
 software environment this section was written and tested is listed below. Any
-recent Linux setup should be applicaple.
+recent Linux setup should be applicable.
 
 * Linux Mint 18
 * gcc 5.4.0, glibc 2.23
@@ -580,7 +580,7 @@ complexity depends on the routing logic requirements.
 The provided RoundRobinRouter example code should serve as a valid starting
 point for both filters and routers. Studying the MaxScale Public Interface
 headers to get a general idea of what services the core provides for plugins,
-is also highly recommeded.
+is also highly recommended.
 
 Lastly, MariaDB MaxScale is an open-source project, so code contributions can be
 accepted if they fulfill the

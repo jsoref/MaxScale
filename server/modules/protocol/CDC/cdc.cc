@@ -20,7 +20,7 @@
  * the maxscale with a Change Data Capture API interface (supporting Avro right now)
  * databases.
  *
- * In the first instance it is intended to connect, authenticate and retieve data in the Avro format
+ * In the first instance it is intended to connect, authenticate and retrieve data in the Avro format
  * as requested by compatible clients.
  *
  * @verbatim
@@ -192,7 +192,7 @@ void CDCClientConnection::ready_for_reading(DCB* event_dcb)
             break;
 
         case CDC_STATE_HANDLE_REQUEST:
-            // handle CLOSE command, it shoudl be routed as well and client connection closed after last
+            // handle CLOSE command, it should be routed as well and client connection closed after last
             // transmission
             if (strncmp((char*)GWBUF_DATA(head), "CLOSE", gwbuf_link_length(head)) == 0)
             {

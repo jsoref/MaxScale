@@ -157,7 +157,7 @@ std::string sql_update_status(const std::string& cluster, int64_t version, const
     return ss.str();
 }
 
-bool is_noop_chage(const mxb::Json& lhs, const mxb::Json& rhs)
+bool is_noop_change(const mxb::Json& lhs, const mxb::Json& rhs)
 {
     return lhs.get_object(CN_CONFIG) == rhs.get_object(CN_CONFIG)
            && lhs.get_object(CN_ADMIN_USERS) == rhs.get_object(CN_ADMIN_USERS);
@@ -456,7 +456,7 @@ bool ConfigManager::commit()
     {
         mxb::Json config = create_config(m_version + 1);
 
-        if (is_noop_chage(config, m_current_config))
+        if (is_noop_change(config, m_current_config))
         {
             MXB_INFO("Resulting configuration is the same as current configuration, ignoring update.");
             rollback();
@@ -1379,7 +1379,7 @@ mxb::Json ConfigManager::fetch_config()
                 // Reverting the configuration is possible but it introduces a problem:
                 // If the configuration on server-A causes server-B to be chosen and the configuration on
                 // server-B causes server-A to be chosen, the configuration would oscillate between the two if
-                // the version values were different. Ignoring older configurations guaratees that we
+                // the version values were different. Ignoring older configurations guarantees that we
                 // stabilize to some known configuration which is easier to deal with (for both MaxScale and
                 // the users) than trying to figure out which of the configurations is the real one.
                 mxb_assert(m_server);

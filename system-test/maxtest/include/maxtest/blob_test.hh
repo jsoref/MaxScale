@@ -9,7 +9,7 @@
  * @param blob_name blob type (LONGBLOB; MEDIUMBLOB or BLOB)
  * @param chunk_size size of one data chunk (in sizeof(long usingned))
  * @param chunks number of chunks to INSERT
- * @param rows number of rows to INSERT (executes INSERT stetament 'rows' times)
+ * @param rows number of rows to INSERT (executes INSERT statement 'rows' times)
  * @return 0 in case of success
  */
 int test_longblob(TestConnections* Test,
@@ -21,7 +21,7 @@ int test_longblob(TestConnections* Test,
 
 
 /**
- * @brief check_longblob_data Does SELECT against table created by test_longblob() and cheks that data are
+ * @brief check_longblob_data Does SELECT against table created by test_longblob() and checks that data are
  * correct
  * @param Test TestConnection object
  * @param conn MYSQL connection handler

@@ -3,7 +3,7 @@
  *
  * - Maxscale.cnf contains max_connections=10 for RWSplit, max_connections=20 for ReadConn master and
  * max_connections=25 for ReadConn slave
- * - create max num of connections and check tha N+1 connection fails
+ * - create max num of connections and check that N+1 connection fails
  */
 
 #include <maxtest/testconnections.hh>
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 
     if (test.ok())
     {
-        test.tprintf("Trying 26 connections with Readconnn slave\n");
+        test.tprintf("Trying 26 connections with Readconn slave\n");
         check_max_conn(2, 25, test);
     }
 
@@ -92,7 +92,7 @@ void check_max_conn(int router, int max_conn, TestConnections& test)
     if (mysql_errno(conn[i]) != 1040)
     {
         test.add_result(1,
-                         "Max_xonnections reached, but error is not 1040, it is %d %s\n",
+                         "Max_connections reached, but error is not 1040, it is %d %s\n",
                          mysql_errno(conn[i]),
                          mysql_error(conn[i]));
     }

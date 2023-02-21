@@ -315,7 +315,7 @@ public:
     };
 
     /**
-     * Defalt constructor creates an asynchronous operation whose status is READY.
+     * Default constructor creates an asynchronous operation whose status is READY.
      */
     Async();
 

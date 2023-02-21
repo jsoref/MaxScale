@@ -79,7 +79,7 @@
  *  Any update on this one?
  *  Comment 4 Vilho Raatikka 2014-09-11 10:34:20 UTC
  *  The problem can't be reproduced with the code I'm working currently, and which will be the one where beta
- * release will be refresed from. Thus, I'd wait till beta refresh is done and see if the problem still
+ * release will be refreshed from. Thus, I'd wait till beta refresh is done and see if the problem still
  * exists.
  *  Comment 5 lisu87 2014-09-11 10:47:32 UTC
  *  Thank you.
@@ -103,7 +103,7 @@
  *
  *  If you already have a rwsplit session, no new connections should be created when new queries are executed.
  *  Comment 7 Vilho Raatikka 2014-09-11 12:34:26 UTC
- *  I built MaxScale from releaes-1.0beta-refresh branch and tested by running 5000 prepared statements in one
+ *  I built MaxScale from releases-1.0beta-refresh branch and tested by running 5000 prepared statements in one
  * session to MaxScale/RWSplit and executing 'show servers' in another window. During the run the number of
  * current connections was 1 in each server and after the run all 'current' counters show 0.
  *
@@ -137,7 +137,7 @@ int conn_N = 50;
 
 TestConnections* Test;
 
-void* parall_traffic(void* ptr);
+void* parallel_traffic(void* ptr);
 
 
 int main(int argc, char* argv[])
@@ -149,7 +149,7 @@ int main(int argc, char* argv[])
     int num_conn = 0;
     char sql[100];
 
-    pthread_t parall_traffic1;
+    pthread_t parallel_traffic1;
 
     MYSQL* conn;
     MYSQL* rwsplit_conn[conn_N];
@@ -210,7 +210,7 @@ int main(int argc, char* argv[])
 
     Test->tprintf("Opening more connection to ReadConn slave in parallel thread\n");
 
-    pthread_create(&parall_traffic1, NULL, parall_traffic, NULL);
+    pthread_create(&parallel_traffic1, NULL, parallel_traffic, NULL);
 
     for (i = 0; i < Test->repl->N; i++)
     {
@@ -299,7 +299,7 @@ int main(int argc, char* argv[])
 }
 
 
-void* parall_traffic(void* ptr)
+void* parallel_traffic(void* ptr)
 {
     MYSQL* slave_conn1[conn_N];
     int i;

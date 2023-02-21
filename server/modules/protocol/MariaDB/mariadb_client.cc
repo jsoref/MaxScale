@@ -1091,7 +1091,7 @@ MariaDBClientConnection::process_special_queries(GWBUF& buffer)
     auto packet_len = buffer.length();
     /* The packet must be at least HEADER + cmd + 5 (USE d) chars in length. Also, if the packet is rather
      * long, assume that it is not a tracked query. This assumption allows avoiding the
-     * make_contiquous-call
+     * make_contiguous-call
      * on e.g. big inserts. The long packets can only contain one of the tracked queries by having lots of
      * comments. */
     const size_t min_len = MYSQL_HEADER_LEN + 1 + 5;
@@ -1752,7 +1752,7 @@ int MariaDBClientConnection::send_auth_error(int packet_number, const char* mysq
     memcpy(mysql_payload, mysql_statemsg, sizeof(mysql_statemsg));
     mysql_payload = mysql_payload + sizeof(mysql_statemsg);
 
-    // write err messg
+    // write err message
     memcpy(mysql_payload, mysql_error_msg, strlen(mysql_error_msg));
 
     // writing data in the Client buffer queue
@@ -2568,7 +2568,7 @@ void MariaDBClientConnection::perform_check_token(AuthType auth_type)
                     m_auth_state = AuthState::START_SESSION;
                     if (user_entry.entry.super_priv && mxs::Config::get().log_warn_super_user)
                     {
-                        MXB_WARNING("Super user %s logged in to service '%s'.",
+                        MXB_WARNING("Super user %s logged into service '%s'.",
                                     m_session_data->user_and_host().c_str(), m_session->service->name());
                     }
                 }
@@ -3000,7 +3000,7 @@ void MariaDBClientConnection::kill_complete(const std::function<void()>& cb, Loc
             return c.get() == client;
         });
 
-        // It's possible that both the reponse to the KILL as well as an error occur on the same LocalClient
+        // It's possible that both the response to the KILL as well as an error occur on the same LocalClient
         // before we end up processing either of the two events. For this reason, the validity of the client
         // must be checked before we invoke the callback, otherwise we risk calling it twice.
         if (it != m_local_clients.end())

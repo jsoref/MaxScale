@@ -90,7 +90,7 @@ int64_t Timer::wait_alarm() const
         std::this_thread::sleep_for(d);
     }
 
-    // This while loop is for the case when sleep_for() returns too early (clock resolution, rouding error).
+    // This while loop is for the case when sleep_for() returns too early (clock resolution, rounding error).
     // Hypothetical, could not get this to trigger in testing.
     while ((ticks = alarm()) == 0)
     {
@@ -158,7 +158,7 @@ struct TimeConvert
 {
     double      div;        // divide the value of the previous unit by this
     std::string suffix;     // milliseconds, hours etc.
-    double      max_visual; // threashold to switch to the next unit
+    double      max_visual; // threshold to switch to the next unit
 };
 // Will never get to centuries because the duration is a long carrying nanoseconds
 TimeConvert convert[]

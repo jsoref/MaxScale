@@ -42,7 +42,7 @@ enum cache_rule_op_t
 
 struct CACHE_RULE
 {
-    cache_rule_attribute_t attribute;   // What attribute is evalued.
+    cache_rule_attribute_t attribute;   // What attribute is evaluated.
     cache_rule_op_t        op;          // What operator is used.
     char*                  value;       // The value from the rule file.
     struct

@@ -271,7 +271,7 @@ struct MergeEngine {
 **
 ** Essentially, this structure contains all those fields of the VdbeSorter
 ** structure for which each thread requires a separate instance. For example,
-** each thread requries its own UnpackedRecord object to unpack records in
+** each thread requires its own UnpackedRecord object to unpack records in
 ** as part of comparison operations.
 **
 ** Before a background thread is launched, variable bDone is set to 0. Then, 

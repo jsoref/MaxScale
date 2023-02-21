@@ -563,7 +563,7 @@ bool Server::set_address(const string& new_address)
         }
         else
         {
-            MXB_ERROR("The specifed server address '%s' is not valid.", new_address.c_str());
+            MXB_ERROR("The specified server address '%s' is not valid.", new_address.c_str());
         }
     }
     else
@@ -1186,7 +1186,7 @@ bool ServerEndpoint::routeQuery(GWBUF* buffer)
         break;
 
     case ConnStatus::IDLE_POOLED:
-        // Connection was pre-emptively pooled. Try to get another one.
+        // Connection was preemptively pooled. Try to get another one.
         if (connect())
         {
             if (m_connstatus == ConnStatus::CONNECTED)

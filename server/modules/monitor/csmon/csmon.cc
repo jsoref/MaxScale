@@ -440,7 +440,7 @@ bool csmon_status(const MODULECMD_ARG* pArgs, json_t** ppOutput)
 #if defined(CSMON_EXPOSE_TRANSACTIONS)
 const char CSMON_BEGIN_DESC[]    = "Begin a transaction.";
 const char CSMON_COMMIT_DESC[]   = "Commit a transaction.";
-const char CSMON_ROLLBACK_DESC[] = "Rollback a trancation.";
+const char CSMON_ROLLBACK_DESC[] = "Rollback a transaction.";
 
 const modulecmd_arg_type_t csmon_begin_argv[] =
 {

@@ -289,7 +289,7 @@ public:
      *
      * This method should be used to stop the session when an abnormal failure has occurred.
      *
-     * @param error An optionl error message that is sent to the client before the session is terminated
+     * @param error An optional error message that is sent to the client before the session is terminated
      */
     void kill(GWBUF* error = nullptr);
 
@@ -562,7 +562,7 @@ uint64_t session_get_next_id();
  *
  * @note The caller must free the session reference by calling session_put_ref
  */
-MXS_SESSION* session_get_ref(MXS_SESSION* sessoin);
+MXS_SESSION* session_get_ref(MXS_SESSION* session);
 
 /**
  * @brief Release a session reference

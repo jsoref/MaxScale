@@ -1465,7 +1465,7 @@ private:
                 ss << "Could ";
             }
 
-            ss << "update the grants in the MariaDB server, but could not store the corresponing "
+            ss << "update the grants in the MariaDB server, but could not store the corresponding "
                << "roles in the local database.";
 
             throw SoftError(ss.str(), error::INTERNAL_ERROR);
@@ -1504,7 +1504,7 @@ private:
 
                     ss << m_statements[i] << "\" failed with \"" << err.message() << "\". "
                        << "The grants in the MariaDB server and the roles in the local "
-                       << "nosqlprotocl database are now not in sync.";
+                       << "nosqlprotocol database are now not in sync.";
 
                     throw SoftError(ss.str(), error::INTERNAL_ERROR);
                 }
@@ -1552,7 +1552,7 @@ private:
                     ss << "but granting privileges with \"" << m_statements[i]
                        << "\" failed with \"" << err.message() << "\". "
                        << "The grants in the MariaDB server and the roles in the local "
-                       << "nosqlprotocl database are now not in sync.";
+                       << "nosqlprotocol database are now not in sync.";
 
                     throw SoftError(ss.str(), error::INTERNAL_ERROR);
                 }

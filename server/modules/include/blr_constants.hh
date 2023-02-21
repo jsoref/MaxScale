@@ -102,7 +102,7 @@
 #define BLR_NSTATS_MINUTES 30
 
 /**
- * High and Low water marks for the slave dcb. These values can be overriden
+ * High and Low water marks for the slave dcb. These values can be overridden
  * by the router options highwater and lowwater.
  */
 #define DEF_LOW_WATER  1000
@@ -152,7 +152,7 @@
 #define BLRM_SET_HEARTBEAT_QUERY_LEN 80
 
 /* string len for master registration query  */
-#define BLRM_MASTER_REGITRATION_QUERY_LEN 255
+#define BLRM_MASTER_REGISTRATION_QUERY_LEN 255
 
 /* Read Binlog position states */
 #define SLAVE_POS_READ_OK     0x00
@@ -161,6 +161,6 @@
 #define SLAVE_POS_BAD_FD      0xfd
 #define SLAVE_POS_BEYOND_EOF  0xfc
 
-/* MariadDB 10 GTID event flags */
+/* MariaDB 10 GTID event flags */
 #define MARIADB_FL_DDL        32
 #define MARIADB_FL_STANDALONE 1

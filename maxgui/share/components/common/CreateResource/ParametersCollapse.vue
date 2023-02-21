@@ -68,7 +68,7 @@ The component is meant to be used for creating resource
 
 PROPS:
 - usePortOrSocket: accepts boolean , if true, get portValue, and socketValue,
-  passing them to parameter-input for handling special input field when editting server or listener.
+  passing them to parameter-input for handling special input field when editing server or listener.
 - isListener: accepts boolean , if true, address parameter will not be required
 */
 import getParamInfo from '@share/mixins/getParamInfo'
@@ -78,7 +78,7 @@ export default {
     mixins: [getParamInfo],
     props: {
         parameters: { type: Array, required: true },
-        // specical props to manipulate required or dependent input attribute
+        // special props to manipulate required or dependent input attribute
         usePortOrSocket: { type: Boolean, default: false }, // needed for server, listener
         parentForm: { type: Object }, // needed for server, listener
         isListener: { type: Boolean, default: false },
@@ -115,7 +115,7 @@ export default {
             parameters.forEach(param => {
                 let paramObj = this.$helpers.lodash.cloneDeep(param)
                 /* this ensure 0 default_value could be assigned,
-                   undefined default_value property will fallback to null to make the input visibled
+                   undefined default_value property will fallback to null to make the input visible
                  */
                 const defaultValue = this.$typy(paramObj.default_value).isUndefined
                     ? null

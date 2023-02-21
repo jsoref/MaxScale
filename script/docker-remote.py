@@ -103,7 +103,7 @@ def completed_process_print(cp):
         print(cp.stdout.decode('utf-8'))
 
 
-#### function execute_regular_command, any command you would notmally run on command line
+#### function execute_regular_command, any command you would normally run on command line
 #### Executed in the home directory of the remote user.
 def execute_regular_command(cmd):
     for host in settings.selected_hosts:
@@ -157,7 +157,7 @@ def deploy_command():
         completed_process_print(completed_process)
 
 
-#### function purge, stop docker, docker prune verything and remove docker deployment files
+#### function purge, stop docker, docker prune everything and remove docker deployment files
 #### Only purges the stuff associated with the current user. TODO, add purge everything (everyone) option.
 def purge_command():
     compose_command("down")

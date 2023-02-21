@@ -32,7 +32,7 @@ struct EncryptCtx;
 struct Rotate
 {
     bool        is_fake;
-    bool        is_artifical;
+    bool        is_artificial;
     std::string file_name;
 };
 
@@ -135,7 +135,7 @@ public:
     unsigned short    flags() const;
 
     /**
-     * @brief read_body  - completes the event when only yhe header was read.
+     * @brief read_body  - completes the event when only the header was read.
      *                    No effect if the body has already been read.
      * @param file       - file to read from
      * @param *file_pos  - file position to start reading from, and set

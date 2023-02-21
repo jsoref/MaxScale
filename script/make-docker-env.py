@@ -100,7 +100,7 @@ def main():
     print(config.template.format(**maxscale_params), file=open_file(File.MaxScaleCnf, None))
     print(config.template.format(**systest_params), file=open_file(File.SystemTestCnf, None))
 
-    # Genrate the rest of the files
+    # Generate the rest of the files
     generate_files(config, maxscale_params, systest_params)
 
 
@@ -116,7 +116,7 @@ class Config(object):
         self.servers = self.read_servers(cnf)
         self.threads = cnf.get("maxscale", "threads", fallback="1")
         self.replace_server_sections(cnf, self.servers)
-        self.insert_placefolders(cnf)
+        self.insert_placeholders(cnf)
 
         string_io = StringIO()
         cnf.write(string_io)
@@ -133,7 +133,7 @@ class Config(object):
         return servers
 
     @staticmethod
-    def insert_placefolders(cnf): # other than those in server sections
+    def insert_placeholders(cnf): # other than those in server sections
         cnf.set("maxscale", "threads", "{threads}")
         for sect in cnf.sections():
             if  cnf.has_option(sect, "user"):
@@ -279,7 +279,7 @@ def open_file(file_enum, ip):
 
 
 #### function create_parameter_dicts,
-# Creates parameter dictionaries. key-value pairs, for file genration.
+# Creates parameter dictionaries. key-value pairs, for file generation.
 def create_parameter_dicts(config):
     maxscale_params={"threads" : config.threads, "user" : default_user, "password" : default_passwd}
     systest_params={"threads" : "###threads###", "user" : default_user, "password" : default_passwd}

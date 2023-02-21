@@ -5,7 +5,7 @@
 #     pip install JayDeBeApi
 
 
-# Backend labes:
+# Backend labels:
 #     REPL_BACKEND
 #     GALERA_BACKEND
 #     EXTERN_BACKEND
@@ -199,7 +199,7 @@ add_test_derived(bug587_1 bug587 bug587_1 LABELS regexfilter hintfilter REPL_BAC
 # Tries to connect Maxscale when all slaves stopped
 add_test_executable(auth_users_from_master.cpp auth_users_from_master replication LABELS MySQLAuth readwritesplit REPL_BACKEND)
 
-# Tries to do change user in the loop, checks that autorization is still ok
+# Tries to do change user in the loop, checks that authorization is still ok
 add_test_executable(auth_change_user_loop.cpp auth_change_user_loop auth_change_user_loop LABELS MySQLAuth MySQLProtocol REPL_BACKEND)
 
 # Simple test with enable_root_user=true
@@ -239,7 +239,7 @@ add_test_executable(ccrfilter_global.cpp ccrfilter_global_test ccrfilter_global 
 # Tries to reconfigure replication setup to use another node as a Master
 add_test_executable(change_master_during_session.cpp change_master_during_session replication LABELS readwritesplit mysqlmon REPL_BACKEND)
 
-# Tries to connect to non existing DB, expects no crash
+# Tries to connect to nonexistent DB, expects no crash
 add_test_executable(connect_to_nonexisting_db.cpp connect_to_nonexisting_db replication LABELS MySQLAuth MySQLProtoco LIGHT REPL_BACKEND)
 
 # check if max_connections parameter works
@@ -251,7 +251,7 @@ add_test_executable(crash_out_of_files.cpp crash_out_of_files load LABELS maxsca
 # Tries INSERTs with size close to 0x0ffffff * N
 add_test_executable(different_size_rwsplit.cpp different_size_rwsplit replication LABELS readwritesplit HEAVY REPL_BACKEND)
 
-# Tries to use 'maxkeys', 'maxpasswrd'
+# Tries to use 'maxkeys', 'maxpasswd'
 add_test_executable(encrypted_passwords.cpp encrypted_passwords replication LABELS maxscale LIGHT REPL_BACKEND)
 
 # Basic MaxCtrl test. Also covers the following bugs:
@@ -295,7 +295,7 @@ add_test_executable(mxs1323_stress.cpp mxs1323_stress mxs1323 LABELS readwritesp
 # A set of MariaDB server tests executed against Maxscale RWSplit
 add_test_script(mariadb_tests_hartmut.sh mariadb_tests_hartmut.sh replication LABELS readwritesplit REPL_BACKEND)
 
-# Checks tha Maxscale processis running as 'maxscale' user
+# Checks that Maxscale process is running as 'maxscale' user
 add_test_executable(maxscale_process_user.cpp maxscale_process_user replication LABELS maxscale LIGHT REPL_BACKEND)
 
 # Regression case for the bug "Two monitors loaded at the same time result into not working installation"
@@ -571,7 +571,7 @@ add_test_executable(mxs1899_generated_cnf.cpp mxs1899_generated_cnf replication 
 # Authentication error testing
 add_test_executable(no_password.cpp no_password replication LABELS MySQLAuth LIGHT REPL_BACKEND)
 
-# Open and immediatelly close a big number of connections
+# Open and immediately close a big number of connections
 add_test_executable(open_close_connections.cpp open_close_connections replication LABELS maxscale readwritesplit REPL_BACKEND)
 
 # Check if prepared statement works via Maxscale (via RWSplit)
@@ -592,7 +592,7 @@ add_test_script(run_ctrl_c.sh run_ctrl_c.sh replication LABELS maxscale LIGHT RE
 # run a set of queries in the loop (see setmix.sql) using Perl client
 add_test_script(run_session_hang.sh run_session_hang.sh replication LABELS readwritesplit REPL_BACKEND)
 
-# Checks connections are distributed equaly among backends
+# Checks connections are distributed equally among backends
 add_test_executable(rwsplit_conn_num.cpp rwsplit_conn_num repl_lgc LABELS readwritesplit LIGHT REPL_BACKEND)
 
 # Check that there is one connection to Master and one connection to one of slaves
@@ -630,10 +630,10 @@ add_test_executable(slave_failover.cpp slave_failover replication.one_slave LABE
 # Execute queries of different size, check data is the same when accessing via Maxscale and directly to backend
 add_test_executable(sql_queries.cpp sql_queries replication LABELS readwritesplit REPL_BACKEND)
 
-# Execute queries of different size, check data is the same when accessing via Maxscale and directly to backend, one persistant connection configured
+# Execute queries of different size, check data is the same when accessing via Maxscale and directly to backend, one persistent connection configured
 add_test_derived(sql_queries_pers1 sql_queries sql_queries_pers1 LABELS maxscale readwritesplit HEAVY REPL_BACKEND)
 
-# Execute queries of different size, check data is the same when accessing via Maxscale and directly to backend, 10 persistant connections configured
+# Execute queries of different size, check data is the same when accessing via Maxscale and directly to backend, 10 persistent connections configured
 add_test_derived(sql_queries_pers10 sql_queries sql_queries_pers10 LABELS maxscale readwritesplit HEAVY REPL_BACKEND)
 
 # Execute queries of different size, check data is the same when accessing via Maxscale and directly to backend, client ssl is ON
@@ -984,10 +984,10 @@ add_test_executable(bug676.cpp bug676 galera LABELS galeramon GALERA_BACKEND)
 # Galera node priority test. Also tests MXS-3826 and MXS-3532.
 add_test_executable(galera_priority.cpp galera_priority galera_priority LABELS galeramon LIGHT GALERA_BACKEND)
 
-# INSERT extremelly big number of rows
+# INSERT extremely big number of rows
 add_test_executable(lots_of_rows.cpp lots_of_rows galera LABELS readwritesplit HEAVY GALERA_BACKEND)
 
-# Prepearing and execution statements in the loop
+# Preparing and execution statements in the loop
 add_test_executable(mxs244_prepared_stmt_loop.cpp mxs244_prepared_stmt_loop galera LABELS readwritesplit readconnroute LIGHT GALERA_BACKEND)
 
 # Playing with blocking and unblocking nodes under INSERT load
@@ -1001,7 +1001,7 @@ add_test_executable(mxs1476.cpp mxs1476 mxs1476 LABELS galeramon GALERA_BACKEND)
 # https://jira.mariadb.org/browse/MXS-1751
 add_test_executable(mxs1751_available_when_donor_crash.cpp mxs1751_available_when_donor_crash mxs1751_available_when_donor_crash LABELS galeramon GALERA_BACKEND)
 
-# Persistant connection test. Also MXS-3265.
+# Persistent connection test. Also MXS-3265.
 add_test_executable(pers_01.cpp pers_01 pers_01 LABELS maxscale REPL_BACKEND readwritesplit)
 
 # Test with extremely big blob inserting/selecting with > 16 mb data blocks
@@ -1013,7 +1013,7 @@ add_test_derived(mxs1110_16mb_ssl mxs1110_16mb longblob_filters LABELS readwrite
 # A set of MariaDB server tests executed against Maxscale RWSplit (Galera backend)
 add_test_script(mariadb_tests_hartmut_galera.sh mariadb_tests_hartmut.sh galera_hartmut LABELS readwritesplit GALERA_BACKEND)
 
-# Crash with Galera and backend restart when persistant cfonnections are in use
+# Crash with Galera and backend restart when persistent connections are in use
 add_test_derived(mxs361 pers_02 mxs361 mxs361 LABELS maxscale REPL_BACKEND GALERA_BACKEND)
 
  # MXS-1585: Crash in MaxScale 2.1.12

@@ -558,7 +558,7 @@ public:
 private:
     bool is_acceptable_error(const ComERR& err) const override
     {
-        // Deleting documents from a non-existent table should appear to succeed.
+        // Deleting documents from a nonexistent table should appear to succeed.
         return err.code() == ER_NO_SUCH_TABLE;
     }
 
@@ -2337,7 +2337,7 @@ private:
 
     bool is_acceptable_error(const ComERR& err) const override
     {
-        // Updating documents in non-existent table should appear to succeed.
+        // Updating documents in nonexistent table should appear to succeed.
         return err.code() == ER_NO_SUCH_TABLE;
     }
 
@@ -2421,13 +2421,13 @@ private:
             {
                 if (m_insert.empty())
                 {
-                    // Ok, so the update did not match anything and we havn't attempted
+                    // Ok, so the update did not match anything and we haven't attempted
                     // an insert.
                     rv = insert_document(index);
                 }
                 else
                 {
-                    // We attempted updating the document we just insterted, but it was
+                    // We attempted updating the document we just inserted, but it was
                     // not found. This just is not supposed to happen.
                     MXB_ERROR("Attempt to update newly created document failed because the "
                               "document was not found: '%s'", m_last_statement.c_str());
